@@ -74,6 +74,21 @@ export function Defaults({section, searchKey}: {section: string, searchKey: stri
         )
 }
 
+export function DefaultWithProp({id, prop, value}) {
+        const [section, key] = id.split(".", 2);  // Get section & key
+        const data = parse(getRelevantSettingsFile())[section][key]
+                .filter(obj => obj[prop].includes(value))
+                .map(obj => (
+                        <li>
+                                On <code>{obj.on}</code> pressed,
+                                run <code>{obj.run}</code>
+                                <br/>({obj.desc})
+                        </li>
+                ))
+
+        return ( <ul>{data}</ul> );
+}
+
 export default function Setting({id, show_key, raw=false, asList=false, ...props}: {children: any, id: string, raw:boolean, asList?: boolean, show_key?:boolean}) {
         const relevantFile = getRelevantSettingsFile();
         const data = parse(relevantFile);

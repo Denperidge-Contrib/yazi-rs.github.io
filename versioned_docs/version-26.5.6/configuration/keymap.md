@@ -3,6 +3,7 @@ sidebar_position: 2
 description: Learn how to configure keyboard shortcuts with Yazi.
 ---
 
+import Default, {Defaults, DefaultWithProp} from "@site/src/components/Default";
 import KeymapArrow from './keymap-arrow.md'
 
 # keymap.toml
@@ -157,6 +158,8 @@ Cancel find, exit visual mode, clear selected, cancel filter, or cancel search.
 | `--search`      | Cancel search.    |
 
 Automatically determine the operation by default, and it will only execute the selected operation after specifying the option; multiple options can be stacked.
+
+<DefaultWithProp id="mgr.keymap" prop="run" value="escape"/>
 
 ### `quit` {#mgr.quit}
 
