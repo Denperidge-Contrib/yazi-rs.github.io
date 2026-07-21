@@ -861,13 +861,13 @@ Move the cursor left or right.
 | `[n]`            | Move the cursor `n` characters left or right. Negative value for left, positive value for right. |
 | `--in-operating` | Move the cursor only if it's currently waiting for an operation.                                 |
 
-<DefaultWithProp id="input.keymap" prop="run" value=""/>
+<DefaultWithProp id="input.keymap" prop="run" value="move" remove="delete"/>
 
 ### `backward` {#input.backward}
 
 Move back to the start of the current or previous word.
 
-<DefaultWithProp id="input.keymap" prop="run" value=""/>
+<DefaultWithProp id="input.keymap" prop="run" regex="^backward"/>
 
 ### `forward` {#input.forward}
 
@@ -877,7 +877,7 @@ Move forward to the start of the next word.
 | --------------- | ---------------------------------------------------- |
 | `--end-of-word` | Move forward to the end of the current or next word. |
 
-<DefaultWithProp id="input.keymap" prop="run" value=""/>
+<DefaultWithProp id="input.keymap" prop="run" regex="^forward"/>
 
 ### `insert` {#input.insert}
 
@@ -887,13 +887,13 @@ Enter insert mode. This action is only available in normal mode.
 | --------------- | ------------------------ |
 | `--append`      | Insert after the cursor. |
 
-<DefaultWithProp id="input.keymap" prop="run" value=""/>
+<DefaultWithProp id="input.keymap" prop="run" value="insert" remove="delete"/>
 
 ### `visual` {#input.visual}
 
 Enter visual mode. This action is only available in normal mode.
 
-<DefaultWithProp id="input.keymap" prop="run" value=""/>
+<DefaultWithProp id="input.keymap" prop="run" value="visual"/>
 
 ### `delete` {#input.delete}
 
@@ -904,13 +904,13 @@ Delete the selected characters. This action is only available in normal mode.
 | `--cut`         | Cut the selected characters into clipboard, instead of only deleting them. |
 | `--insert`      | Delete and enter insert mode.                                              |
 
-<DefaultWithProp id="input.keymap" prop="run" value=""/>
+<DefaultWithProp id="input.keymap" prop="run" value="delete"/>
 
 ### `yank` {#input.yank}
 
 Copy the selected characters. This action is only available in normal mode.
 
-<DefaultWithProp id="input.keymap" prop="run" value=""/>
+<DefaultWithProp id="input.keymap" prop="run" value="yank"/>
 
 ### `paste` {#input.paste}
 
@@ -920,25 +920,25 @@ Paste the copied characters after the cursor. This action is only available in n
 | --------------- | ---------------------------------------------- |
 | `--before`      | Paste the copied characters before the cursor. |
 
-<DefaultWithProp id="input.keymap" prop="run" value=""/>
+<DefaultWithProp id="input.keymap" prop="run" value="paste"/>
 
 ### `undo` {#input.undo}
 
 Undo the last operation. This action is only available in normal mode.
 
-<DefaultWithProp id="input.keymap" prop="run" value=""/>
+<DefaultWithProp id="input.keymap" prop="run" value="undo"/>
 
 ### `redo` {#input.redo}
 
 Redo the last operation. This action is only available in normal mode.
 
-<DefaultWithProp id="input.keymap" prop="run" value=""/>
+<DefaultWithProp id="input.keymap" prop="run" value="redo"/>
 
 ### `help` {#input.help}
 
 Open the help menu. This action is only available in normal mode.
 
-<DefaultWithProp id="input.keymap" prop="run" value=""/>
+<DefaultWithProp id="input.keymap" prop="run" value="help"/>
 
 ### `backspace` {#input.backspace}
 
@@ -948,7 +948,7 @@ Delete the character before the cursor. This action is only available in insert 
 | --------------- | -------------------------------------- |
 | `--under`       | Delete the character under the cursor. |
 
-<DefaultWithProp id="input.keymap" prop="run" value=""/>
+<DefaultWithProp id="input.keymap" prop="run" value="backspace"/>
 
 ### `kill` {#input.kill}
 
@@ -961,21 +961,21 @@ Kill the specified range of characters. This action is only available in insert 
 | `"backward"`    | Kill backwards to the start of the current word. |
 | `"forward"`     | Kill forwards to the end of the current word.    |
 
-<DefaultWithProp id="input.keymap" prop="run" value=""/>
+<DefaultWithProp id="input.keymap" prop="run" value="kill"/>
 
 ### `plugin` {#input.plugin}
 
 See [Functional plugin](/docs/plugins/overview#functional-plugin). This action is only available in normal mode.
 
-<DefaultWithProp id="input.keymap" prop="run" value=""/>
+<DefaultWithProp id="input.keymap" prop="run" value="plugin"/>
 
 ### `noop` {#input.noop}
 
 See [`noop` action](#mgr.noop).
 
-## [confirm] {#confirm}
+<DefaultWithProp id="input.keymap" prop="run" value="noop"/>
 
-<DefaultWithProp id="mgr.keymap" prop="run" value=""/>
+## [confirm] {#confirm}
 
 ### `close` {#confirm.close}
 
@@ -985,21 +985,21 @@ Cancel and close the confirmation dialog.
 | --------------- | ------------------------ |
 | `--submit`      | Submit the confirmation. |
 
-<DefaultWithProp id="mgr.keymap" prop="run" value=""/>
+<DefaultWithProp id="confirm.keymap" prop="run" value="close"/>
 
 ### `arrow` {#confirm.arrow}
 
 <KeymapArrow />
 
-<DefaultWithProp id="mgr.keymap" prop="run" value=""/>
+<DefaultWithProp id="confirm.keymap" prop="run" value="arrow"/>
 
 ### `help` {#confirm.help}
 
 Open the help menu.
 
-## [cmp] {#cmp}
+<DefaultWithProp id="confirm.keymap" prop="run" value="help"/>
 
-<DefaultWithProp id="mgr.keymap" prop="run" value=""/>
+## [cmp] {#cmp}
 
 ### `close` {#cmp.close}
 
@@ -1009,25 +1009,25 @@ Hide the completion menu.
 | --------------- | ---------------------- |
 | `--submit`      | Submit the completion. |
 
-<DefaultWithProp id="mgr.keymap" prop="run" value=""/>
+<DefaultWithProp id="cmp.keymap" prop="run" value="close"/>
 
 ### `arrow` {#cmp.arrow}
 
 <KeymapArrow />
 
-<DefaultWithProp id="mgr.keymap" prop="run" value=""/>
+<DefaultWithProp id="cmp.keymap" prop="run" value="arrow"/>
 
 ### `help` {#cmp.help}
 
 Open the help menu.
 
-<DefaultWithProp id="mgr.keymap" prop="run" value=""/>
+<DefaultWithProp id="cmp.keymap" prop="run" value="help"/>
 
 ### `plugin` {#cmp.plugin}
 
 See [Functional plugin](/docs/plugins/overview#functional-plugin).
 
-<DefaultWithProp id="mgr.keymap" prop="run" value=""/>
+<DefaultWithProp id="cmp.keymap" prop="run" value=""/>
 
 ### `noop` {#cmp.noop}
 
@@ -1035,38 +1035,39 @@ See [`noop` action](#mgr.noop).
 
 ## [help] {#help}
 
-<DefaultWithProp id="mgr.keymap" prop="run" value=""/>
-
 ### `close` {#help.close}
 
 Hide the help menu.
 
-<DefaultWithProp id="mgr.keymap" prop="run" value=""/>
+<DefaultWithProp id="help.keymap" prop="run" value="close"/>
 
 ### `escape` {#help.escape}
 
 Clear the filter, or hide the help menu.
 
-<DefaultWithProp id="mgr.keymap" prop="run" value=""/>
+<DefaultWithProp id="help.keymap" prop="run" value="escape"/>
 
 ### `arrow` {#help.arrow}
 
 <KeymapArrow />
 
-<DefaultWithProp id="mgr.keymap" prop="run" value=""/>
+<DefaultWithProp id="help.keymap" prop="run" value="rrow"/>
 
 ### `filter` {#help.filter}
 
 Apply a filter for the help items.
 
-<DefaultWithProp id="mgr.keymap" prop="run" value=""/>
+<DefaultWithProp id="help.keymap" prop="run" value="filter"/>
 
 ### `plugin` {#help.plugin}
 
 See [Functional plugin](/docs/plugins/overview#functional-plugin).
 
-<DefaultWithProp id="mgr.keymap" prop="run" value=""/>
+<DefaultWithProp id="help.keymap" prop="run" value="plugin"/>
 
 ### `noop` {#help.noop}
 
 See [`noop` action](#mgr.noop).
+
+<DefaultWithProp id="help.keymap" prop="run" value="noop"/>
+

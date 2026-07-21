@@ -74,12 +74,12 @@ export function Defaults({section, searchKey}: {section: string, searchKey: stri
         )
 }
 
-export function DefaultWithProp({id, prop, value, regex}: {id: string, prop:string, value: string, regex?:string}) {
+export function DefaultWithProp({id, prop, value, regex, remove}: {id: string, prop:string, value: string, regex?:string, remove?:string}) {
         const [section, key] = id.split(".", 2);  // Get section & key
         const parsedRegex = new RegExp(regex || `.*${value}.*`)
 
-        const data = parse(getRelevantSettingsFile())[section][key]
-                .filter(obj => parsedRegex.test(obj[prop]))
+        const data = parse(getRelevantSettingsFile())[section][key]  // TODO cleaner remove implementation
+                .filter(obj => parsedRegex.test(obj[prop]) && !JSON.stringify(obj[prop]).includes(remove))
                 .map(obj => (
                         <li>
                                 On <code>{obj.on}</code> pressed,
