@@ -1,13 +1,27 @@
 import React from "react";
 import {parse} from "toml";
 import CodeBlock from '@theme/CodeBlock';
+
+import yazi from "!!raw-loader!./yazi-default.toml";
+import keymap from "!!raw-loader!./keymap-default.toml";
+
 import Heading from "@theme/Heading";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import defaults from "!!raw-loader!./yazi-default.toml";
+import {useLocation} from "@docusaurus/router";
 
-const data = parse(defaults);
 
-function getDefaultAsCodeblock(section: string, key?: string) {
+function getRelevantSettingsFile() {
+        switch (useLocation().pathname) {
+                case "/docs/configuration/yazi":
+                        return yazi;
+                case "/docs/configuration/keymap":
+                        return keymap;
+                
+        }
+
+}
+
+function getDefaultAsCodeblock(data: object, section: string, key?: string) {
         // Get default value & stringify
         const rawData = key ? data[section][key] : data[section];
         const value = JSON.stringify(rawData);
@@ -17,16 +31,15 @@ function getDefaultAsCodeblock(section: string, key?: string) {
 }
 
 // For raw=true
-function _getRawtoml(data: string, regex: RegExp, cb: (val: string) => string) {
-        const toml = cb(data.match(regex)[0])
+function _getRawtoml(defaultFileString: string, regex: RegExp, cb: (val: string) => string) {
+        const toml = cb(defaultFileString.match(regex)[0])
         parse(toml)  // Sanity check
         return toml;
 }
 
-function getRawtoml(data: string, section: string, key?: string) {
-
+function getRawtoml(defaultFileString: string, section: string, key?: string) {
         const sectionToml = _getRawtoml(
-                data,
+                defaultFileString,
                 new RegExp("\\[" + section + "\\](.|\n)*?^\\[", "gm"),
                 (val) => val.replace(/\]$\n\n^\[/m, "]")
         );
@@ -40,12 +53,14 @@ function getRawtoml(data: string, section: string, key?: string) {
 }
 
 export function Defaults({section, searchKey}: {section: string, searchKey: string}) {
+        const data = parse(getRelevantSettingsFile());
+
         const sectionSettings = data[section]
         const relevantSettings = Object.keys(sectionSettings).filter(setting => setting.includes(searchKey));
         const elements = relevantSettings.map(key => {
                 return (
                         <li>
-                                {key} = {getDefaultAsCodeblock(section, key)}
+                                {key} = {getDefaultAsCodeblock(data, section, key)}
                         </li>
                 )
         });
@@ -60,6 +75,8 @@ export function Defaults({section, searchKey}: {section: string, searchKey: stri
 }
 
 export default function Setting({id, show_key, raw=false, asList=false, ...props}: {children: any, id: string, raw:boolean, asList?: boolean, show_key?:boolean}) {
+        const relevantFile = getRelevantSettingsFile();
+        const data = parse(relevantFile);
         const [section, key] = id.split(".", 2);  // Get section & key
 
         // Optionally add "for {key}" to output
@@ -67,14 +84,14 @@ export default function Setting({id, show_key, raw=false, asList=false, ...props
 
         if (!raw) {
                 return (
-                        <p className="default" {...props}>{p} {getDefaultAsCodeblock(section, key)}</p>
+                        <p className="default" {...props}>{p} {getDefaultAsCodeblock(data, section, key)}</p>
                 )
         } else {
                 return (
                         <section className="default">
                                 <p {...props}>{p}:</p>
                                 <CodeBlock language="toml">
-                                        {getRawtoml(defaults, section, key)}
+                                        {getRawtoml(relevantFile, section, key)}
                                 </CodeBlock>
                         </section>
 
