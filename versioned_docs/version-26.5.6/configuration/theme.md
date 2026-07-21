@@ -4,6 +4,7 @@ description: Learn how to configure your Yazi theme.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import {DefaultTheme} from '@site/src/components/Default'
 
 # theme.toml
 
@@ -86,6 +87,8 @@ overall = { bg = "#1e1e2e" }
 |      |                         |
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
+
+<DefaultTheme id="app.overall"/>
 
 ## [mgr] {#mgr}
 
@@ -919,3 +922,5 @@ prepend_conds = [
 	{ if = "!(dir | link)", text = "📄" },  # Normal files (not directories or symlinks)
 ]
 ```
+<DefaultTheme id="icon" raw={true}/>
+

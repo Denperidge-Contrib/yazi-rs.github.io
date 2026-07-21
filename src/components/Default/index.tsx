@@ -101,7 +101,7 @@ export default function Default({
         relevantFile=getRelevantSettingsFile(),
         ...props}: {
                 id: string,
-                show_key?: boolean,
+                show_key?: string,
                 raw?: boolean,
                 asList?: boolean,
                 relevantFile?: string,
@@ -131,12 +131,28 @@ export default function Default({
 }
 
 export function DefaultTheme({id, ...props}) {
-        return (
-                <section className="default">
-                        <Default id={id} relevantFile={themeLight} {...props} />
-                        <Default id={id} relevantFile={themeDark} {...props}/>
-                </section>
-        )
+        const [section,key] = id.split(".", 2);
+
+        const values = [themeDark, themeLight].map(theme => {
+                const parsed = parse(theme);
+                const value = key ? parsed[section][key] : parsed[section]
+
+                return JSON.stringify(value);
+        })
+        
+        if (values[0] == values[1]) {
+                return (
+                        <Default id={id} show_key="both themes" relevantFile={themeLight} {...props}/>
+                )
+        } else {
+                return (
+                        <section className="default">
+                                <Default id={id} show_key="the light theme" relevantFile={themeLight} {...props} />
+                                <Default id={id} show_key="the dark theme" relevantFile={themeDark} {...props}/>
+                        </section>
+                )
+        }
+        
 }
 
 
