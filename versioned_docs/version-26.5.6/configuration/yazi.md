@@ -10,21 +10,18 @@ import Setting from "@site/src/components/Setting";
 If you want to fine-tune the default settings, the first step is to [create your own configuration file](/docs/configuration/overview).
 :::
 
-<!-- <Setting section="mgr"> -->
 
 ## [mgr] {#mgr}
 
-### `ratio` {#mgr.ratio}
+<Setting id="mgr.ratio">
 
 Manager layout by ratio, 3-element array. For example:
 
 - `[1, 4, 3]`: 1/8 width for parent, 4/8 width for current, 3/8 width for preview
 
-<Setting section="mgr.ratio"/>
 Set the value to `0` to hide the corresponding panel, but at least one panel must be visible (non-zero).
 
-<!-- </Setting> -->
-
+</Setting>
 
 ### `sort_by` {#mgr.sort_by}
 
@@ -38,6 +35,7 @@ File sorting method.
 - `"natural"`: Sort naturally, e.g. `1.md` < `2.md` < `10.md`
 - `"size"`: Sort by file size.
 - `"random"`: Sort randomly.
+
 
 ### `sort_sensitive` {#mgr.sort_sensitive}
 
