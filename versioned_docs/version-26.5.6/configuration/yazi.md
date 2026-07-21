@@ -2,7 +2,7 @@
 sidebar_position: 1
 description: Learn how to configure Yazi's basic functionality.
 ---
-import Setting from "@site/src/components/Setting";
+import Default from "@site/src/components/Default";
 
 # yazi.toml
 
@@ -10,10 +10,9 @@ import Setting from "@site/src/components/Setting";
 If you want to fine-tune the default settings, the first step is to [create your own configuration file](/docs/configuration/overview).
 :::
 
-
 ## [mgr] {#mgr}
 
-<Setting id="mgr.ratio">
+### `ratio` {#mgr.ratio}
 
 Manager layout by ratio, 3-element array. For example:
 
@@ -21,9 +20,9 @@ Manager layout by ratio, 3-element array. For example:
 
 Set the value to `0` to hide the corresponding panel, but at least one panel must be visible (non-zero).
 
-</Setting>
+<Default id="mgr.ratio"/>
 
-<Setting id="mgr.sort_by">
+### `sort_by` {#mgr.sort_by}
 
 File sorting method.
 
@@ -36,36 +35,36 @@ File sorting method.
 - `"size"`: Sort by file size.
 - `"random"`: Sort randomly.
 
-</Setting>
+<Default id="mgr.sort_by"/>
 
-<Setting id="mgr.sort_sensitive">
+### `sort_sensitive` {#mgr.sort_sensitive}
 
 Sort case-sensitively.
 
 - `true`: Case-sensitive
 - `false`: Case-insensitive
 
-</Setting>
+<Default id="mgr.sort_sensitive"/>
 
-<Setting id="mgr.sort_reverse">
+### `sort_reverse` {#mgr.sort_reverse}
 
 Display files in reverse order.
 
 - `true`: Reverse order
 - `false`: Normal order
 
-</Setting>
+<Default id="mgr.sort_reverse"/>
 
-<Setting id="mgr.sort_dir_first">
+### `sort_dir_first` {#mgr.sort_dir_first}
 
 Display directories first.
 
 - `true`: Directories first
 - `false`: Normal order
 
-</Setting>
+<Default id="mgr.sort_dir_first"/>
 
-<Setting id="mgr.sort_translit">
+### `sort_translit` {#mgr.sort_translit}
 
 Transliterate filenames for sorting (i.e. replace `Â` with `A`, `Æ` with `AE`, etc.), only available if [`sort_by = "natural"`](#mgr.sort_by).
 
@@ -74,9 +73,9 @@ This is useful for files that contain Hungarian characters.
 - `true`: Enabled
 - `false`: Disabled
 
-</Setting>
+<Default id="mgr.sort_translit"/>
 
-<Setting id="mgr.linemode">
+### `linemode` {#mgr.linemode}
 
 Line mode: display information associated with the file on the right side of the file list row.
 
@@ -112,35 +111,35 @@ function Linemode:size_and_mtime()
 end
 ```
 
-</Setting>
+<Default id="mgr.linemode"/>
 
-<Setting id="mgr.show_hidden">
+### `show_hidden` {#mgr.show_hidden}
 
 Show hidden files.
 
 - `true`: Show
 - `false`: Do not show
 
-</Setting>
+<Default id="mgr.show_hidden"/>
 
-<Setting id="mgr.show_symlink">
+### `show_symlink` {#mgr.show_symlink}
 
 Show the path that the symlink points to after the filename.
 
 - `true`: Show
 - `false`: Do not show
 
-</Setting>
+<Default id="mgr.show_symlink"/>
 
-<Setting id="mgr.scrolloff">
+### `scrolloff` {#mgr.scrolloff}
 
 The number of files to keep above and below the cursor when moving through the file list.
 
 If the value is larger than half the screen height (e.g. `200`), the cursor will be centered.
 
-</Setting>
+<Default id="mgr.scrolloff"/>
 
-<Setting id="mgr.mouse_events">
+### `mouse_events` {#mgr.mouse_events}
 
 Array of strings, the types of mouse events can be received by the plugin system, available values:
 
@@ -154,50 +153,48 @@ If the array is empty, disable the mouse.
 
 Usually, you don't need to change it, unless the plugin you're using requires enabling a certain event.
 
-</Setting>
+<Default id="mgr.mouse_events"/>
 
 ## [preview] {#preview}
 
-<Setting id="preview.wrap">
+### `wrap` {#preview.wrap}
 
 Wrap long lines in the code preview.
 
 - `"yes"`: Enable word wrap
 - `"no"`: Disable word wrap
 
-</Setting>
+<Default id="preview.wrap"/>
 
-<Setting id="preview.tab_size">
+### `tab_size` {#preview.tab_size}
 
 The width of a tab character (`\t`) in spaces.
 
-</Setting>
+<Default id="preview.tab_size"/>
 
-<Setting id="preview.max_width">
+### `max_width` {#preview.max_width}
 
 Maximum preview width for images. Run `yazi --clear-cache` after changing this for it to take effect.
 
 This value is also used for preloading images; the larger it is, the larger the image cache generated, which consumes more CPU.
 
-</Setting>
+<Default id="preview.max_width"/>
 
-<Setting id="preview.max_height">
+### `max_height` {#preview.max_height}
 
 Maximum preview height for images. Run `yazi --clear-cache` after changing this for it to take effect.
 
 This value is also used for preloading images; the larger it is, the larger the image cache generated, which consumes more CPU.
 
-</Setting>
+<Default id="preview.max_height"/>
 
-<Setting id="preview.cache_dir">
+### `cache_dir` {#preview.cache_dir}
 
 The system cache directory is used by default, and the cached files will go away on a reboot automatically.
 
 If you want to make it more persistent, you can specify the cache directory manually as an absolute path.
 
-</Setting>
-
-<Setting id="preview.image_delay">
+### `image_delay` {#preview.image_delay}
 
 Wait for at least the specified milliseconds before starting to send image preview data to the terminal.
 
@@ -205,9 +202,9 @@ This is to alleviate lag caused by some terminal emulators struggling to render 
 
 See https://github.com/sxyazi/yazi/pull/1512 for more information.
 
-</Setting>
+<Default id="preview.image_delay"/>
 
-<Setting id="preview.image_filter">
+### `image_filter` {#preview.image_filter}
 
 The filter used on image downscaling, available values:
 
@@ -220,17 +217,17 @@ They are arranged in order from fast to slow, and from poor to good quality - La
 
 See the example and benchmark here: https://docs.rs/image/0.24.8/image/imageops/enum.FilterType.html#examples
 
-</Setting>
+<Default id="preview.image_filter"/>
 
-<Setting id="preview.image_quality">
+### `image_quality` {#preview.image_quality}
 
 Quality on pre-caching images, range 50-90.
 
 The larger value, the better image quality, but slower with more CPU consumption, and generates larger cache files that occupy more storage space.
 
-</Setting>
+<Default id="preview.image_quality"/>
 
-<Setting id="preview.ueberzug_scale">
+### `ueberzug_scale` / `ueberzug_offset` {#preview.ueberzug_scale}
 
 - ueberzug_scale (Float): Ueberzug image scaling ratio, `scale>1` for enlargement, `scale<1` for reduction. For example, `0.5` indicates a reduction to half.
 - ueberzug_offset (`[x, y, width, height]`): Ueberzug image offset, in cell units. For example, `[0.5, 0.5, -0.5, -0.5]` indicates that the image is offset by half a cell in both directions, and the width and height are reduced by half a cell.
@@ -238,6 +235,9 @@ The larger value, the better image quality, but slower with more CPU consumption
 This is useful for solving [a bug of Überzug++ image size calculation](https://github.com/jstkdng/ueberzugpp/issues/122).
 
 If your monitor has a `2.0` scale factor, and is running on Wayland under Hyprland, you may need to set `ueberzug_scale: 0.5`, and adjust the value of `ueberzug_offset` according to your case, to offset this issue.
+
+<Default id="preview.ueberzug_scale" show_key={true}/>
+<Default id="preview.ueberzug_offset" show_key={true}/>
 
 ## [opener] {#opener}
 
@@ -275,6 +275,9 @@ Available options are as follows:
 - `orphan`: Keep the process running even if Yazi has exited, once specified, the process will be detached from the task scheduling system.
 - `desc`: Description of the opener, display in interactive components, such as "Open with" and help menu.
 - `for`: The opener is only available on this system, similar to [per-OS keybindings](/docs/configuration/keymap#per-os).
+
+
+<Default id="opener" raw={true}/>
 
 ## [open] {#open}
 
@@ -322,67 +325,63 @@ With that:
 - You can [`spot`](/docs/configuration/keymap#mgr.spot) on a file to check it's mime-type with the default <kbd>Tab</kbd> key.
 - If `use` is an array containing multiple openers, all commands in these openers will be merged. [`open`](/docs/configuration/keymap#mgr.open) will run the first of these commands; [`open --interactive`](/docs/configuration/keymap#mgr.open) will list all of these commands in the "open with" menu.
 
-</Setting>
-
 ## [tasks] {#tasks}
 
-<Setting id="tasks.file_workers">
+### `file_workers` {#tasks.file_workers}
 
 Max concurrent file operations, such as copy, cut, delete, etc.
 
-</Setting>
+<Default id="tasks.file_workers"/>
 
-<Setting id="tasks.plugin_workers">
+### `plugin_workers` {#tasks.plugin_workers}
 
 Max concurrent functional-plugin tasks.
 
-</Setting>
+<Default id="tasks.plugin_workers"/>
 
-<Setting id="tasks.fetch_workers">
+### `fetch_workers` {#tasks.fetch_workers}
 
 Max concurrent fetch tasks.
 
-</Setting>
+<Default id="tasks.fetch_workers"/>
 
-<Setting id="tasks.preload_workers">
+### `preload_workers` {#tasks.preload_workers}
 
 Max concurrent preload tasks.
 
-</Setting>
+<Default id="tasks.preload_workers"/>
 
-<Setting id="tasks.process_workers">
+### `process_workers` {#tasks.process_workers}
 
 Max concurrent processes.
 
-</Setting>
+<Default id="tasks.process_workers"/>
 
-<Setting id="tasks.bizarre_retry">
+### `bizarre_retry` {#tasks.bizarre_retry}
 
 Maximum number of retries when a bizarre failure occurs.
 
-</Setting>
+<Default id="tasks.bizarre_retry"/>
 
-<Setting id="tasks.suppress_preload">
+### `suppress_preload` {#tasks.suppress_preload}
 
 Exclude the preload tasks created by the system from the task list, do not report their progress, and do not consider them on app exit confirming.
 
-</Setting>
+<Default id="tasks.suppress_preload"/>
 
-<Setting id="tasks.image_alloc">
+### `image_alloc` {#tasks.image_alloc}
 
 Maximum memory allocation limit in bytes for decoding a single image, `0` for unlimited.
 
-</Setting>
+<Default id="tasks.image_alloc"/>
 
-<Setting id="tasks.image_bound">
+### `image_bound` {#tasks.image_bound}
 
 An array of `[width, height]`, maximum image size (in pixels) for decoding a single image, and `0` for unlimited.
 
-</Setting>
-
 ## [plugin] {#plugin}
 
-<Setting id="plugin.fetchers">
+### fetchers {#plugin.fetchers}
 
 :::warning
 Fetchers are not complete yet, and the API is subject to change without prior notice!
@@ -399,9 +398,9 @@ Here are the available options for a single rule:
 - `prio`: Task scheduling priority. One of `high`, `normal` or `low`.
 - `group`: Group of the fetcher. Only the first matching fetcher in the same group will be run.
 
-</Setting>
+<Default id="plugin.fetchers"/>
 
-<Setting id="plugin.previewers">
+### previewers {#plugin.previewers}
 
 You can prepend or append new preview rules to the default `previewers` under `[plugin]` by `prepend_previewers` and `append_previewers`, see [Configuration mixing](/docs/configuration/overview#mixing) for details.
 Here are the available options for a single rule:
@@ -440,9 +439,9 @@ Yazi comes with these previewer plugins:
 
 If you want to create your own previewer, see [Previewer API](/docs/plugins/overview#previewer).
 
-</Setting>
+<Default id="plugin.previewers"/>
 
-<Setting id="plugin.preloaders">
+### preloaders {#plugin.preloaders}
 
 You can prepend or append new preview rules to the default `preloaders` under `[plugin]` by `prepend_preloaders` and `append_preloaders`, see [Configuration mixing](/docs/configuration/overview#mixing) for details.
 Here are the available options for a single rule:
@@ -470,11 +469,11 @@ Yazi comes with these preloader plugins:
 
 If you want to create your own preloader, see [Preloader API](/docs/plugins/overview#preloader).
 
-</Setting>
-
 ## [input] {#input}
 
-<Setting id="input.cursor_blink">
+<Default id="mgr"/>
+
+### `cursor_blink` {#input.cursor_blink}
 
 Control the cursor blinking.
 
@@ -486,21 +485,21 @@ You can customize the title and position of each input. The following inputs are
 As for position, it consists of two parts: [Origin](#input.origin) and [Offset](#input.offset).
 The origin is the top-left corner of the input, and the offset is the increment from this origin. Together, they determine the area of the input on the screen.
 
-</Setting>
+<Default id="input.cursor_blink"/>
 
-<Setting id="input.origin">
+### Origin {#input.origin}
 
 See [`Origin`](/docs/plugins/aliases#origin) for available values.
 
-</Setting>
+<Default id="input.origin"/>
 
-<Setting id="input.offset">
+### Offset {#input.offset}
 
 As for the offset, it's a 4-element tuple: `(x, y, width, height)`.
 
-</Setting>
+<Default id="input.offset"/>
 
-<Setting id="input.placeholder">
+### Placeholder {#input.placeholder}
 
 Some inputs have special placeholders that will be replaced with actual content on display:
 
@@ -532,8 +531,6 @@ Some inputs have special placeholders that will be replaced with actual content 
 
   It's a tuple of 2-element: first for [`shell --interactive`](/docs/configuration/keymap/#mgr.shell), second for `shell --interactive --block`.
 
-</Setting>
-
 ## [confirm] {#confirm}
 
 Same as the [`[input]`](#input) section. There are a few available: `trash`, `delete`, `overwrite` and `quit`.
@@ -544,7 +541,7 @@ Same as the [`[input]`](#input) section. Available selectors: `open`.
 
 ## [which] {#which}
 
-<Setting id="which.sort_by">
+### `sort_by` {#which.sort_by}
 
 Candidate sorting method.
 
@@ -552,27 +549,28 @@ Candidate sorting method.
 - `"key"`: Sort by key.
 - `"desc`: Sort by description.
 
-</Setting>
+<Default id="which.sort_by"/>
 
-<Setting id="which.sort_sensitive">
+### `sort_sensitive` {#which.sort_sensitive}
 
 Sort case-sensitively.
 
 - `true`: Case-sensitive
 - `false`: Case-insensitive
 
-</Setting>
+<Default id="which.sort_sensitive"/>
 
-<Setting id="which.sort_reverse">
+### `sort_reverse` {#which.sort_reverse}
 
 Display candidates in reverse order.
 
 - `true`: Reverse order
 - `false`: Normal order
 
-</Setting>
+<Default id="which.sort_reverse"/>
 
-<Setting id="which.sort_translit">
+
+### `sort_translit` {#which.sort_translit}
 
 Transliterate filenames for sorting, i.e. replace `Â` with `A`, `Æ` with `AE`, etc.
 
@@ -580,5 +578,4 @@ This is useful for files that contain Hungarian characters.
 
 - `true`: Enabled
 - `false`: Disabled
- 
-</Setting>
+
