@@ -2,7 +2,7 @@
 sidebar_position: 1
 description: Learn how to configure Yazi's basic functionality.
 ---
-import Default from "@site/src/components/Default";
+import Default, {Defaults} from "@site/src/components/Default";
 
 # yazi.toml
 
@@ -475,8 +475,6 @@ If you want to create your own preloader, see [Preloader API](/docs/plugins/over
 
 ## [input] {#input}
 
-<Default id="mgr"/>
-
 ### `cursor_blink` {#input.cursor_blink}
 
 Control the cursor blinking.
@@ -495,7 +493,7 @@ The origin is the top-left corner of the input, and the offset is the increment 
 
 See [`Origin`](/docs/plugins/aliases#origin) for available values.
 
-<Default id="input.origin"/>
+<Defaults section="input" searchKey="origin" />
 
 ### Offset {#input.offset}
 
