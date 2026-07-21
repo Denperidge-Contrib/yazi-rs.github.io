@@ -11,7 +11,7 @@ export default function({children, id}: {children: any, id: string}) {
         const def = JSON.stringify(data[section][key]);
         return (
                 <section>
-                        <Heading as="h3" id={id}>
+                        <Heading as="h3" id={id} title="meow">
                                 <code>{key}</code>
                         </Heading>
                         {children}

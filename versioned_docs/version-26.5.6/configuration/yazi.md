@@ -23,7 +23,7 @@ Set the value to `0` to hide the corresponding panel, but at least one panel mus
 
 </Setting>
 
-### `sort_by` {#mgr.sort_by}
+<Setting id="mgr.sort_by">
 
 File sorting method.
 
@@ -36,29 +36,36 @@ File sorting method.
 - `"size"`: Sort by file size.
 - `"random"`: Sort randomly.
 
+</Setting>
 
-### `sort_sensitive` {#mgr.sort_sensitive}
+<Setting id="mgr.sort_sensitive">
 
 Sort case-sensitively.
 
 - `true`: Case-sensitive
 - `false`: Case-insensitive
 
-### `sort_reverse` {#mgr.sort_reverse}
+</Setting>
+
+<Setting id="mgr.sort_reverse">
 
 Display files in reverse order.
 
 - `true`: Reverse order
 - `false`: Normal order
 
-### `sort_dir_first` {#mgr.sort_dir_first}
+</Setting>
+
+<Setting id="mgr.sort_dir_first">
 
 Display directories first.
 
 - `true`: Directories first
 - `false`: Normal order
 
-### `sort_translit` {#mgr.sort_translit}
+</Setting>
+
+<Setting id="mgr.sort_translit">
 
 Transliterate filenames for sorting (i.e. replace `Â` with `A`, `Æ` with `AE`, etc.), only available if [`sort_by = "natural"`](#mgr.sort_by).
 
@@ -67,7 +74,9 @@ This is useful for files that contain Hungarian characters.
 - `true`: Enabled
 - `false`: Disabled
 
-### `linemode` {#mgr.linemode}
+</Setting>
+
+<Setting id="mgr.linemode">
 
 Line mode: display information associated with the file on the right side of the file list row.
 
@@ -103,27 +112,35 @@ function Linemode:size_and_mtime()
 end
 ```
 
-### `show_hidden` {#mgr.show_hidden}
+</Setting>
+
+<Setting id="mgr.show_hidden">
 
 Show hidden files.
 
 - `true`: Show
 - `false`: Do not show
 
-### `show_symlink` {#mgr.show_symlink}
+</Setting>
+
+<Setting id="mgr.show_symlink">
 
 Show the path that the symlink points to after the filename.
 
 - `true`: Show
 - `false`: Do not show
 
-### `scrolloff` {#mgr.scrolloff}
+</Setting>
+
+<Setting id="mgr.scrolloff">
 
 The number of files to keep above and below the cursor when moving through the file list.
 
 If the value is larger than half the screen height (e.g. `200`), the cursor will be centered.
 
-### `mouse_events` {#mgr.mouse_events}
+</Setting>
+
+<Setting id="mgr.mouse_events">
 
 Array of strings, the types of mouse events can be received by the plugin system, available values:
 
@@ -137,38 +154,50 @@ If the array is empty, disable the mouse.
 
 Usually, you don't need to change it, unless the plugin you're using requires enabling a certain event.
 
+</Setting>
+
 ## [preview] {#preview}
 
-### `wrap` {#preview.wrap}
+<Setting id="preview.wrap">
 
 Wrap long lines in the code preview.
 
 - `"yes"`: Enable word wrap
 - `"no"`: Disable word wrap
 
-### `tab_size` {#preview.tab_size}
+</Setting>
+
+<Setting id="preview.tab_size">
 
 The width of a tab character (`\t`) in spaces.
 
-### `max_width` {#preview.max_width}
+</Setting>
+
+<Setting id="preview.max_width">
 
 Maximum preview width for images. Run `yazi --clear-cache` after changing this for it to take effect.
 
 This value is also used for preloading images; the larger it is, the larger the image cache generated, which consumes more CPU.
 
-### `max_height` {#preview.max_height}
+</Setting>
+
+<Setting id="preview.max_height">
 
 Maximum preview height for images. Run `yazi --clear-cache` after changing this for it to take effect.
 
 This value is also used for preloading images; the larger it is, the larger the image cache generated, which consumes more CPU.
 
-### `cache_dir` {#preview.cache_dir}
+</Setting>
+
+<Setting id="preview.cache_dir">
 
 The system cache directory is used by default, and the cached files will go away on a reboot automatically.
 
 If you want to make it more persistent, you can specify the cache directory manually as an absolute path.
 
-### `image_delay` {#preview.image_delay}
+</Setting>
+
+<Setting id="preview.image_delay">
 
 Wait for at least the specified milliseconds before starting to send image preview data to the terminal.
 
@@ -176,7 +205,9 @@ This is to alleviate lag caused by some terminal emulators struggling to render 
 
 See https://github.com/sxyazi/yazi/pull/1512 for more information.
 
-### `image_filter` {#preview.image_filter}
+</Setting>
+
+<Setting id="preview.image_filter">
 
 The filter used on image downscaling, available values:
 
@@ -189,13 +220,17 @@ They are arranged in order from fast to slow, and from poor to good quality - La
 
 See the example and benchmark here: https://docs.rs/image/0.24.8/image/imageops/enum.FilterType.html#examples
 
-### `image_quality` {#preview.image_quality}
+</Setting>
+
+<Setting id="preview.image_quality">
 
 Quality on pre-caching images, range 50-90.
 
 The larger value, the better image quality, but slower with more CPU consumption, and generates larger cache files that occupy more storage space.
 
-### `ueberzug_scale` / `ueberzug_offset` {#preview.ueberzug_scale}
+</Setting>
+
+<Setting id="preview.ueberzug_scale">
 
 - ueberzug_scale (Float): Ueberzug image scaling ratio, `scale>1` for enlargement, `scale<1` for reduction. For example, `0.5` indicates a reduction to half.
 - ueberzug_offset (`[x, y, width, height]`): Ueberzug image offset, in cell units. For example, `[0.5, 0.5, -0.5, -0.5]` indicates that the image is offset by half a cell in both directions, and the width and height are reduced by half a cell.
@@ -287,47 +322,67 @@ With that:
 - You can [`spot`](/docs/configuration/keymap#mgr.spot) on a file to check it's mime-type with the default <kbd>Tab</kbd> key.
 - If `use` is an array containing multiple openers, all commands in these openers will be merged. [`open`](/docs/configuration/keymap#mgr.open) will run the first of these commands; [`open --interactive`](/docs/configuration/keymap#mgr.open) will list all of these commands in the "open with" menu.
 
+</Setting>
+
 ## [tasks] {#tasks}
 
-### `file_workers` {#tasks.file_workers}
+<Setting id="tasks.file_workers">
 
 Max concurrent file operations, such as copy, cut, delete, etc.
 
-### `plugin_workers` {#tasks.plugin_workers}
+</Setting>
+
+<Setting id="tasks.plugin_workers">
 
 Max concurrent functional-plugin tasks.
 
-### `fetch_workers` {#tasks.fetch_workers}
+</Setting>
+
+<Setting id="tasks.fetch_workers">
 
 Max concurrent fetch tasks.
 
-### `preload_workers` {#tasks.preload_workers}
+</Setting>
+
+<Setting id="tasks.preload_workers">
 
 Max concurrent preload tasks.
 
-### `process_workers` {#tasks.process_workers}
+</Setting>
+
+<Setting id="tasks.process_workers">
 
 Max concurrent processes.
 
-### `bizarre_retry` {#tasks.bizarre_retry}
+</Setting>
+
+<Setting id="tasks.bizarre_retry">
 
 Maximum number of retries when a bizarre failure occurs.
 
-### `suppress_preload` {#tasks.suppress_preload}
+</Setting>
+
+<Setting id="tasks.suppress_preload">
 
 Exclude the preload tasks created by the system from the task list, do not report their progress, and do not consider them on app exit confirming.
 
-### `image_alloc` {#tasks.image_alloc}
+</Setting>
+
+<Setting id="tasks.image_alloc">
 
 Maximum memory allocation limit in bytes for decoding a single image, `0` for unlimited.
 
-### `image_bound` {#tasks.image_bound}
+</Setting>
+
+<Setting id="tasks.image_bound">
 
 An array of `[width, height]`, maximum image size (in pixels) for decoding a single image, and `0` for unlimited.
 
+</Setting>
+
 ## [plugin] {#plugin}
 
-### fetchers {#plugin.fetchers}
+<Setting id="plugin.fetchers">
 
 :::warning
 Fetchers are not complete yet, and the API is subject to change without prior notice!
@@ -344,7 +399,9 @@ Here are the available options for a single rule:
 - `prio`: Task scheduling priority. One of `high`, `normal` or `low`.
 - `group`: Group of the fetcher. Only the first matching fetcher in the same group will be run.
 
-### previewers {#plugin.previewers}
+</Setting>
+
+<Setting id="plugin.previewers">
 
 You can prepend or append new preview rules to the default `previewers` under `[plugin]` by `prepend_previewers` and `append_previewers`, see [Configuration mixing](/docs/configuration/overview#mixing) for details.
 Here are the available options for a single rule:
@@ -383,7 +440,9 @@ Yazi comes with these previewer plugins:
 
 If you want to create your own previewer, see [Previewer API](/docs/plugins/overview#previewer).
 
-### preloaders {#plugin.preloaders}
+</Setting>
+
+<Setting id="plugin.preloaders">
 
 You can prepend or append new preview rules to the default `preloaders` under `[plugin]` by `prepend_preloaders` and `append_preloaders`, see [Configuration mixing](/docs/configuration/overview#mixing) for details.
 Here are the available options for a single rule:
@@ -411,9 +470,11 @@ Yazi comes with these preloader plugins:
 
 If you want to create your own preloader, see [Preloader API](/docs/plugins/overview#preloader).
 
+</Setting>
+
 ## [input] {#input}
 
-### `cursor_blink` {#input.cursor_blink}
+<Setting id="input.cursor_blink">
 
 Control the cursor blinking.
 
@@ -425,15 +486,21 @@ You can customize the title and position of each input. The following inputs are
 As for position, it consists of two parts: [Origin](#input.origin) and [Offset](#input.offset).
 The origin is the top-left corner of the input, and the offset is the increment from this origin. Together, they determine the area of the input on the screen.
 
-### Origin {#input.origin}
+</Setting>
+
+<Setting id="input.origin">
 
 See [`Origin`](/docs/plugins/aliases#origin) for available values.
 
-### Offset {#input.offset}
+</Setting>
+
+<Setting id="input.offset">
 
 As for the offset, it's a 4-element tuple: `(x, y, width, height)`.
 
-### Placeholder {#input.placeholder}
+</Setting>
+
+<Setting id="input.placeholder">
 
 Some inputs have special placeholders that will be replaced with actual content on display:
 
@@ -465,6 +532,8 @@ Some inputs have special placeholders that will be replaced with actual content 
 
   It's a tuple of 2-element: first for [`shell --interactive`](/docs/configuration/keymap/#mgr.shell), second for `shell --interactive --block`.
 
+</Setting>
+
 ## [confirm] {#confirm}
 
 Same as the [`[input]`](#input) section. There are a few available: `trash`, `delete`, `overwrite` and `quit`.
@@ -475,7 +544,7 @@ Same as the [`[input]`](#input) section. Available selectors: `open`.
 
 ## [which] {#which}
 
-### `sort_by` {#which.sort_by}
+<Setting id="which.sort_by">
 
 Candidate sorting method.
 
@@ -483,21 +552,27 @@ Candidate sorting method.
 - `"key"`: Sort by key.
 - `"desc`: Sort by description.
 
-### `sort_sensitive` {#which.sort_sensitive}
+</Setting>
+
+<Setting id="which.sort_sensitive">
 
 Sort case-sensitively.
 
 - `true`: Case-sensitive
 - `false`: Case-insensitive
 
-### `sort_reverse` {#which.sort_reverse}
+</Setting>
+
+<Setting id="which.sort_reverse">
 
 Display candidates in reverse order.
 
 - `true`: Reverse order
 - `false`: Normal order
 
-### `sort_translit` {#which.sort_translit}
+</Setting>
+
+<Setting id="which.sort_translit">
 
 Transliterate filenames for sorting, i.e. replace `Â` with `A`, `Æ` with `AE`, etc.
 
@@ -505,3 +580,5 @@ This is useful for files that contain Hungarian characters.
 
 - `true`: Enabled
 - `false`: Disabled
+ 
+</Setting>
