@@ -100,6 +100,8 @@ CWD text style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
+<DefaultTheme id="mgr.cwd"/>
+
 ### `find_keyword` {#mgr.find_keyword}
 
 Style of the highlighted portion in the filename.
@@ -107,6 +109,8 @@ Style of the highlighted portion in the filename.
 |      |                         |
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
+
+<DefaultTheme id="mgr.find_keyword"/>
 
 ### `find_position` {#mgr.find_position}
 
@@ -116,6 +120,8 @@ Style of current file location in all found files to the right of the filename.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
+<DefaultTheme id="mgr.find_position" />
+
 ### `symlink_target` {#mgr.symlink_target}
 
 Style for the path that a symbolic link points to, e.g., the ` -> /path/to/target` part in `my_symbolic_file -> /path/to/target`.
@@ -123,6 +129,8 @@ Style for the path that a symbolic link points to, e.g., the ` -> /path/to/targe
 |      |                         |
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
+
+<DefaultTheme id="mgr.symlink_target" />
 
 ### `marker_copied` {#mgr.marker_copied}
 
@@ -132,6 +140,8 @@ Copied file marker style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
+<DefaultTheme id="mgr.marker_copied" />
+
 ### `marker_cut` {#mgr.marker_cut}
 
 Cut file marker style.
@@ -139,6 +149,8 @@ Cut file marker style.
 |      |                         |
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
+
+<DefaultTheme id="mgr.marker_cut" />
 
 ### `marker_marked` {#mgr.marker_marked}
 
@@ -148,6 +160,8 @@ Marker style of pre-selected file in visual mode.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
+<DefaultTheme id="mgr.marker_marked" />
+
 ### `marker_selected` {#mgr.marker_selected}
 
 Selected file marker style.
@@ -155,6 +169,8 @@ Selected file marker style.
 |      |                         |
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
+
+<DefaultTheme id="mgr.marker_selected" />
 
 ### `count_copied` {#mgr.count_copied}
 
@@ -164,6 +180,8 @@ Style of copied file number.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
+<DefaultTheme id="mgr.count_copied" />
+
 ### `count_cut` {#mgr.count_cut}
 
 Style of cut file number.
@@ -171,6 +189,8 @@ Style of cut file number.
 |      |                         |
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
+
+<DefaultTheme id="mgr.count_cut" />
 
 ### `count_selected` {#mgr.count_selected}
 
@@ -180,6 +200,8 @@ Style of selected file number.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
+<DefaultTheme id="mgr.count_selected" />
+
 ### `border_symbol` {#mgr.border_symbol}
 
 Border symbol, e.g. `"│"`.
@@ -188,6 +210,8 @@ Border symbol, e.g. `"│"`.
 | ---- | -------- |
 | Type | `string` |
 
+<DefaultTheme id="mgr.border_symbol" />
+
 ### `border_style` {#mgr.border_style}
 
 Border style.
@@ -195,6 +219,8 @@ Border style.
 |      |                         |
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
+
+<DefaultTheme id="mgr.border_style" />
 
 ### `syntect_theme` {#mgr.syntect_theme}
 
@@ -206,6 +232,9 @@ For example, `"~/Downloads/Dracula.tmTheme"`, not available after using a flavor
 | ---- | -------- |
 | Type | `string` |
 
+
+<DefaultTheme id="mgr.syntect_theme" />
+
 ## [indicator]
 
 ### `parent` {#indicator.parent}
@@ -216,6 +245,8 @@ Indicator bar style, in the parent pane.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
+<DefaultTheme id="indicator.parent" />
+
 ### `current` {#indicator.current}
 
 Indicator bar style, in the current pane.
@@ -223,6 +254,8 @@ Indicator bar style, in the current pane.
 |      |                         |
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
+
+<DefaultTheme id="indicator.current" />
 
 ### `preview` {#indicator.preview}
 
@@ -232,6 +265,8 @@ Indicator bar style, in the preview pane.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
+<DefaultTheme id="indicator.preview" />
+
 ### `padding` {#indicator.padding}
 
 Padding around indicator bar, e.g. `{ open = "▐", close = "▌" }`, which makes a square indicator.
@@ -239,6 +274,8 @@ Padding around indicator bar, e.g. `{ open = "▐", close = "▌" }`, which make
 |      |                                   |
 | ---- | --------------------------------- |
 | Type | `{ open: string, close: string }` |
+
+<DefaultTheme id="indicator.padding" />
 
 ## [tabs] {#tabs}
 
@@ -255,6 +292,8 @@ Active tab style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
+<DefaultTheme id="tabs.active" />
+
 ### `inactive` {#tabs.inactive}
 
 Inactive tab style.
@@ -262,6 +301,8 @@ Inactive tab style.
 |      |                         |
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
+
+<DefaultTheme id="tabs.inactive" />
 
 ### `sep_inner` {#tabs.sep_inner}
 
@@ -271,6 +312,8 @@ Inner separator symbol, e.g. `{ open = "[", close = "]" }`.
 | ---- | --------------------------------- |
 | Type | `{ open: string, close: string }` |
 
+<DefaultTheme id="tabs.sep_inner" />
+
 ### `sep_outer` {#tabs.sep_outer}
 
 Outer separator symbol, e.g. `{ open = "", close = "" }`.
@@ -279,7 +322,11 @@ Outer separator symbol, e.g. `{ open = "", close = "" }`.
 | ---- | --------------------------------- |
 | Type | `{ open: string, close: string }` |
 
+<DefaultTheme id="tabs.sep_outer" />
+
 ## [mode] {#mode}
+
+<DefaultTheme id="mgr" />
 
 ### `normal_main` {#mode.normal_main}
 
@@ -289,6 +336,8 @@ Normal mode main style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
+<DefaultTheme id="mgr" />
+
 ### `normal_alt` {#mode.normal_alt}
 
 Normal mode alternative style.
@@ -296,6 +345,8 @@ Normal mode alternative style.
 |      |                         |
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
+
+<DefaultTheme id="mgr" />
 
 ### `select_main` {#mode.select_main}
 
@@ -305,6 +356,8 @@ Select mode main style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
+<DefaultTheme id="mgr" />
+
 ### `select_alt` {#mode.select_alt}
 
 Select mode alternative style.
@@ -313,6 +366,8 @@ Select mode alternative style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
+<DefaultTheme id="mgr" />
+
 ### `unset_main` {#mode.unset_main}
 
 Unset mode main style.
@@ -320,6 +375,8 @@ Unset mode main style.
 |      |                         |
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
+
+<DefaultTheme id="mgr" />
 
 ### `unset_alt` {#mode.unset_alt}
 
@@ -336,6 +393,8 @@ Unset mode alternative style.
 	<img src="/webp/status-sep-explain.webp" loading="lazy" />
 </details>
 
+<DefaultTheme id="mgr" />
+
 ### `overall` {#status.overall}
 
 Overall status bar style.
@@ -343,6 +402,8 @@ Overall status bar style.
 |      |                         |
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
+
+<DefaultTheme id="mgr" />
 
 ### `sep_left` {#status.sep_left}
 
@@ -352,6 +413,8 @@ Left separator symbol, e.g. `{ open = "", close = "]" }`.
 | ---- | --------------------------------- |
 | Type | `{ open: string, close: string }` |
 
+<DefaultTheme id="mgr" />
+
 ### `sep_right` {#status.sep_right}
 
 Right separator symbol, e.g. `{ open = "[", close = "" }`.
@@ -359,6 +422,8 @@ Right separator symbol, e.g. `{ open = "[", close = "" }`.
 |      |                                   |
 | ---- | --------------------------------- |
 | Type | `{ open: string, close: string }` |
+
+<DefaultTheme id="mgr" />
 
 ### `perm_type` {#status.perm_type}
 
@@ -368,6 +433,8 @@ Style of the file type symbol, such as `d` for directory, `-` for file, `l` for 
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
+<DefaultTheme id="mgr" />
+
 ### `perm_read` {#status.perm_read}
 
 Style of the read permission symbol (`r`).
@@ -375,6 +442,8 @@ Style of the read permission symbol (`r`).
 |      |                         |
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
+
+<DefaultTheme id="mgr" />
 
 ### `perm_write` {#status.perm_write}
 
@@ -384,6 +453,8 @@ Style of the write permission symbol (`w`).
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
+<DefaultTheme id="mgr" />
+
 ### `perm_exec` {#status.perm_exec}
 
 Style of the execute permission symbol (`x`).
@@ -391,6 +462,8 @@ Style of the execute permission symbol (`x`).
 |      |                         |
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
+
+<DefaultTheme id="mgr" />
 
 ### `perm_sep` {#status.perm_sep}
 
@@ -400,6 +473,8 @@ Style of the permission separator symbol (`-`).
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
+<DefaultTheme id="mgr" />
+
 ### `progress_label` {#status.progress_label}
 
 Progress label style.
@@ -408,6 +483,8 @@ Progress label style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
+<DefaultTheme id="mgr" />
+
 ### `progress_normal` {#status.progress_normal}
 
 Style of the progress bar when it is not in an error state.
@@ -415,6 +492,8 @@ Style of the progress bar when it is not in an error state.
 |      |                         |
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
+
+<DefaultTheme id="mgr" />
 
 ### `progress_error` {#status.progress_error}
 
@@ -426,6 +505,8 @@ Style of the progress bar when an error occurs.
 
 ## [which] {#which}
 
+<DefaultTheme id="mgr" />
+
 ### `cols` {#which.cols}
 
 Number of columns.
@@ -433,6 +514,8 @@ Number of columns.
 |      |                   |
 | ---- | ----------------- |
 | Type | `1` \| `2` \| `3` |
+
+<DefaultTheme id="mgr" />
 
 ### `mask` {#which.mask}
 
@@ -442,6 +525,8 @@ Mask style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
+<DefaultTheme id="mgr" />
+
 ### `cand` {#which.cand}
 
 Candidate key style.
@@ -449,6 +534,8 @@ Candidate key style.
 |      |                         |
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
+
+<DefaultTheme id="mgr" />
 
 ### `rest` {#which.rest}
 
@@ -458,6 +545,8 @@ Rest key style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
+<DefaultTheme id="mgr" />
+
 ### `desc` {#which.desc}
 
 Description style.
@@ -466,6 +555,8 @@ Description style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
+<DefaultTheme id="mgr" />
+
 ### `separator` {#which.separator}
 
 Separator symbol, e.g. `" -> "`.
@@ -473,6 +564,8 @@ Separator symbol, e.g. `" -> "`.
 |      |          |
 | ---- | -------- |
 | Type | `string` |
+
+<DefaultTheme id="mgr" />
 
 ### `separator_style` {#which.separator_style}
 
@@ -484,6 +577,8 @@ Separator style.
 
 ## [confirm] {#confirm}
 
+<DefaultTheme id="mgr" />
+
 ### `border` {#confirm.border}
 
 Border style.
@@ -491,6 +586,8 @@ Border style.
 |      |                         |
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
+
+<DefaultTheme id="mgr" />
 
 ### `title` {#confirm.title}
 
@@ -500,6 +597,8 @@ Title style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
+<DefaultTheme id="mgr" />
+
 ### `body` {#confirm.body}
 
 Body style.
@@ -507,6 +606,8 @@ Body style.
 |      |                         |
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
+
+<DefaultTheme id="mgr" />
 
 ### `list` {#confirm.list}
 
@@ -516,6 +617,8 @@ List style, which is the style of the list of items below the content.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
+<DefaultTheme id="mgr" />
+
 ### `btn_yes` {#confirm.btn_yes}
 
 The style of the yes button.
@@ -524,6 +627,8 @@ The style of the yes button.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
+<DefaultTheme id="mgr" />
+
 ### `btn_no` {#confirm.btn_no}
 
 The style of the no button.
@@ -531,6 +636,8 @@ The style of the no button.
 |      |                         |
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
+
+<DefaultTheme id="mgr" />
 
 ### `btn_labels` {#confirm.btn_labels}
 
@@ -549,6 +656,8 @@ The first string is the label for the yes button and the second is the label for
 	<img src="/webp/spot-tbl-explain.webp" loading="lazy" />
 </details>
 
+<DefaultTheme id="mgr" />
+
 ### `border` {#spot.border}
 
 Border style.
@@ -556,6 +665,8 @@ Border style.
 |      |                         |
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
+
+<DefaultTheme id="mgr" />
 
 ### `title` {#spot.title}
 
@@ -565,6 +676,8 @@ Title style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
+<DefaultTheme id="mgr" />
+
 ### `tbl_col` {#spot.tbl_col}
 
 The style of the selected column in the table.
@@ -572,6 +685,8 @@ The style of the selected column in the table.
 |      |                         |
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
+
+<DefaultTheme id="mgr" />
 
 ### `tbl_cell` {#spot.tbl_cell}
 
@@ -583,6 +698,8 @@ The style of the selected cell in the table.
 
 ## [notify] {#notify}
 
+<DefaultTheme id="mgr" />
+
 ### `title_info` {#notify.title_info}
 
 Style of the info title.
@@ -591,6 +708,8 @@ Style of the info title.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
+<DefaultTheme id="mgr" />
+
 ### `title_warn` {#notify.title_warn}
 
 Style of the warning title.
@@ -598,6 +717,8 @@ Style of the warning title.
 |      |                         |
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
+
+<DefaultTheme id="mgr" />
 
 ### `title_error` {#notify.title_error}
 
@@ -609,6 +730,8 @@ Style of the error title.
 
 ## [pick] {#pick}
 
+<DefaultTheme id="mgr" />
+
 ### `border` {#pick.border}
 
 Border style.
@@ -617,6 +740,8 @@ Border style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
+<DefaultTheme id="mgr" />
+
 ### `active` {#pick.active}
 
 Selected item style.
@@ -624,6 +749,8 @@ Selected item style.
 |      |                         |
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
+
+<DefaultTheme id="mgr" />
 
 ### `inactive` {#pick.inactive}
 
@@ -635,6 +762,8 @@ Unselected item style.
 
 ## [input] {#input}
 
+<DefaultTheme id="mgr" />
+
 ### `border` {#input.border}
 
 Border style.
@@ -642,6 +771,8 @@ Border style.
 |      |                         |
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
+
+<DefaultTheme id="mgr" />
 
 ### `title` {#input.title}
 
@@ -651,6 +782,8 @@ Title style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
+<DefaultTheme id="mgr" />
+
 ### `value` {#input.value}
 
 Value style.
@@ -658,6 +791,8 @@ Value style.
 |      |                         |
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
+
+<DefaultTheme id="mgr" />
 
 ### `selected` {#input.selected}
 
@@ -669,6 +804,8 @@ Selected value style.
 
 ## [cmp] {#cmp}
 
+<DefaultTheme id="mgr" />
+
 ### `border` {#cmp.border}
 
 Border style.
@@ -676,6 +813,8 @@ Border style.
 |      |                         |
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
+
+<DefaultTheme id="mgr" />
 
 ### `active` {#cmp.active}
 
@@ -685,6 +824,8 @@ Selected item style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
+<DefaultTheme id="mgr" />
+
 ### `inactive` {#cmp.inactive}
 
 Unselected item style.
@@ -692,6 +833,8 @@ Unselected item style.
 |      |                         |
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
+
+<DefaultTheme id="mgr" />
 
 ### `icon_file` {#cmp.icon_file}
 
@@ -701,6 +844,8 @@ File icon.
 | ---- | -------- |
 | Type | `string` |
 
+<DefaultTheme id="mgr" />
+
 ### `icon_folder` {#cmp.icon_folder}
 
 Folder icon.
@@ -708,6 +853,8 @@ Folder icon.
 |      |          |
 | ---- | -------- |
 | Type | `string` |
+
+<DefaultTheme id="mgr" />
 
 ### `icon_command` {#cmp.icon_command}
 
@@ -719,6 +866,8 @@ Command icon.
 
 ## [tasks] {#tasks}
 
+<DefaultTheme id="mgr" />
+
 ### `border` {#tasks.border}
 
 Border style.
@@ -727,6 +876,8 @@ Border style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
+<DefaultTheme id="mgr" />
+
 ### `title` {#tasks.title}
 
 Title style.
@@ -734,6 +885,8 @@ Title style.
 |      |                         |
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
+
+<DefaultTheme id="mgr" />
 
 ### `hovered` {#tasks.hovered}
 
@@ -745,6 +898,8 @@ Hovered item style.
 
 ## [help] {#help}
 
+<DefaultTheme id="mgr" />
+
 ### `on` {#help.on}
 
 Key column style.
@@ -752,6 +907,8 @@ Key column style.
 |      |                         |
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
+
+<DefaultTheme id="mgr" />
 
 ### `run` {#help.run}
 
@@ -761,6 +918,8 @@ Action column style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
+<DefaultTheme id="mgr" />
+
 ### `desc` {#help.desc}
 
 Description column style.
@@ -768,6 +927,8 @@ Description column style.
 |      |                         |
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
+
+<DefaultTheme id="mgr" />
 
 ### `hovered` {#help.hovered}
 
@@ -777,6 +938,8 @@ Hovered item style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
+<DefaultTheme id="mgr" />
+
 ### `footer` {#help.footer}
 
 Footer style.
@@ -784,6 +947,8 @@ Footer style.
 |      |                         |
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
+
+<DefaultTheme id="mgr" />
 
 ### `icon_info` {#help.icon_info}
 
@@ -793,6 +958,8 @@ Info icon.
 | ---- | -------- |
 | Type | `string` |
 
+<DefaultTheme id="mgr" />
+
 ### `icon_warn` {#help.icon_warn}
 
 Warning icon.
@@ -800,6 +967,8 @@ Warning icon.
 |      |          |
 | ---- | -------- |
 | Type | `string` |
+
+<DefaultTheme id="mgr" />
 
 ### `icon_error` {#help.icon_error}
 
