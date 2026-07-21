@@ -1,14 +1,12 @@
 import React from "react";
-import {parse} from "toml";
 import CodeBlock from '@theme/CodeBlock';
+import {useLocation} from "@docusaurus/router";
+import {parse} from "toml";
 
 import yazi from "!!raw-loader!./yazi-default.toml";
 import keymap from "!!raw-loader!./keymap-default.toml";
-
-import Heading from "@theme/Heading";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import {useLocation} from "@docusaurus/router";
-
+import themeLight from "raw-loader!./theme-light.toml";
+import themeDark from "raw-loader!./theme-dark.toml";
 
 function getRelevantSettingsFile() {
         switch (useLocation().pathname) {
@@ -40,7 +38,7 @@ function _getRawtoml(defaultFileString: string, regex: RegExp, cb: (val: string)
 function getRawtoml(defaultFileString: string, section: string, key?: string) {
         const sectionToml = _getRawtoml(
                 defaultFileString,
-                new RegExp("\\[" + section + "\\](.|\n)*?^\\[", "gm"),
+                new RegExp("\\[" + section + "\\](.|\n)*?(^\\[|$(?![\r\n]))", "gm"),
                 (val) => val.replace(/\]$\n\n^\[/m, "]")
         );
         if (!key) { return sectionToml; }
@@ -96,8 +94,19 @@ export function DefaultWithProp({id, prop, value, regex, remove}: {id: string, p
 
 }
 
-export default function Setting({id, show_key, raw=false, asList=false, ...props}: {children: any, id: string, raw:boolean, asList?: boolean, show_key?:boolean}) {
-        const relevantFile = getRelevantSettingsFile();
+export default function Default({
+        id, show_key,
+        raw=false,
+        asList=false,
+        relevantFile=getRelevantSettingsFile(),
+        ...props}: {
+                id: string,
+                show_key?: boolean,
+                raw?: boolean,
+                asList?: boolean,
+                relevantFile?: string,
+                children?: any
+        }) {
         const data = parse(relevantFile);
         const [section, key] = id.split(".", 2);  // Get section & key
 
@@ -120,4 +129,14 @@ export default function Setting({id, show_key, raw=false, asList=false, ...props
                 )
         }
 }
+
+export function DefaultTheme({id, ...props}) {
+        return (
+                <section className="default">
+                        <Default id={id} relevantFile={themeLight} {...props} />
+                        <Default id={id} relevantFile={themeDark} {...props}/>
+                </section>
+        )
+}
+
 
