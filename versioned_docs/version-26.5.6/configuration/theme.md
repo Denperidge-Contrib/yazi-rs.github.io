@@ -656,8 +656,6 @@ The first string is the label for the yes button and the second is the label for
 	<img src="/webp/spot-tbl-explain.webp" loading="lazy" />
 </details>
 
-<DefaultTheme id="mgr" />
-
 ### `border` {#spot.border}
 
 Border style.
@@ -666,7 +664,7 @@ Border style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="spot.border" />
 
 ### `title` {#spot.title}
 
@@ -676,7 +674,7 @@ Title style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="spot.title" />
 
 ### `tbl_col` {#spot.tbl_col}
 
@@ -686,7 +684,7 @@ The style of the selected column in the table.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="spot.tbl_col" />
 
 ### `tbl_cell` {#spot.tbl_cell}
 
@@ -696,9 +694,10 @@ The style of the selected cell in the table.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
-## [notify] {#notify}
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="spot.tbl_cell" />
+
+## [notify] {#notify}
 
 ### `title_info` {#notify.title_info}
 
@@ -708,7 +707,7 @@ Style of the info title.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="notify.title_info" />
 
 ### `title_warn` {#notify.title_warn}
 
@@ -718,7 +717,7 @@ Style of the warning title.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="notify.title_warn" />
 
 ### `title_error` {#notify.title_error}
 
@@ -728,9 +727,9 @@ Style of the error title.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
-## [pick] {#pick}
+<DefaultTheme id="notify.title_error" />
 
-<DefaultTheme id="mgr" />
+## [pick] {#pick}
 
 ### `border` {#pick.border}
 
@@ -740,7 +739,7 @@ Border style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="pick.border" />
 
 ### `active` {#pick.active}
 
@@ -750,7 +749,7 @@ Selected item style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="pick.active" />
 
 ### `inactive` {#pick.inactive}
 
@@ -760,9 +759,10 @@ Unselected item style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
-## [input] {#input}
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="pick.inactive" />
+
+## [input] {#input}
 
 ### `border` {#input.border}
 
@@ -772,7 +772,7 @@ Border style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="input.border" />
 
 ### `title` {#input.title}
 
@@ -782,7 +782,7 @@ Title style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="input.title" />
 
 ### `value` {#input.value}
 
@@ -792,7 +792,7 @@ Value style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="input.value" />
 
 ### `selected` {#input.selected}
 
@@ -802,9 +802,9 @@ Selected value style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
-## [cmp] {#cmp}
+<DefaultTheme id="input.selected" />
 
-<DefaultTheme id="mgr" />
+## [cmp] {#cmp}
 
 ### `border` {#cmp.border}
 
@@ -814,7 +814,7 @@ Border style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="cmp.border" />
 
 ### `active` {#cmp.active}
 
@@ -824,7 +824,7 @@ Selected item style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="cmp.active" />
 
 ### `inactive` {#cmp.inactive}
 
@@ -834,7 +834,7 @@ Unselected item style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="cmp.inactive" />
 
 ### `icon_file` {#cmp.icon_file}
 
@@ -844,7 +844,7 @@ File icon.
 | ---- | -------- |
 | Type | `string` |
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="cmp.icon_file" />
 
 ### `icon_folder` {#cmp.icon_folder}
 
@@ -854,7 +854,7 @@ Folder icon.
 | ---- | -------- |
 | Type | `string` |
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="cmp.icon_folder" />
 
 ### `icon_command` {#cmp.icon_command}
 
@@ -864,9 +864,9 @@ Command icon.
 | ---- | -------- |
 | Type | `string` |
 
-## [tasks] {#tasks}
+<DefaultTheme id="cmp.icon_command" />
 
-<DefaultTheme id="mgr" />
+## [tasks] {#tasks}
 
 ### `border` {#tasks.border}
 
@@ -876,7 +876,7 @@ Border style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="tasks.border" />
 
 ### `title` {#tasks.title}
 
@@ -886,7 +886,7 @@ Title style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="tasks.title" />
 
 ### `hovered` {#tasks.hovered}
 
@@ -896,9 +896,9 @@ Hovered item style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
-## [help] {#help}
+<DefaultTheme id="tasks.hovered" />
 
-<DefaultTheme id="mgr" />
+## [help] {#help}
 
 ### `on` {#help.on}
 
@@ -908,7 +908,7 @@ Key column style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="help.on" />
 
 ### `run` {#help.run}
 
@@ -918,7 +918,7 @@ Action column style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="help.run" />
 
 ### `desc` {#help.desc}
 
@@ -928,7 +928,7 @@ Description column style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="help.desc" />
 
 ### `hovered` {#help.hovered}
 
@@ -938,7 +938,7 @@ Hovered item style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="help.hovered" />
 
 ### `footer` {#help.footer}
 
@@ -948,7 +948,7 @@ Footer style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="help.footer" />
 
 ### `icon_info` {#help.icon_info}
 
@@ -958,7 +958,7 @@ Info icon.
 | ---- | -------- |
 | Type | `string` |
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="notify.icon_info" />
 
 ### `icon_warn` {#help.icon_warn}
 
@@ -968,7 +968,7 @@ Warning icon.
 | ---- | -------- |
 | Type | `string` |
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="notify.icon_warn" />
 
 ### `icon_error` {#help.icon_error}
 
@@ -977,6 +977,8 @@ Error icon.
 |      |          |
 | ---- | -------- |
 | Type | `string` |
+
+<DefaultTheme id="notify.icon_error" />
 
 ## [filetype] {#filetype}
 
@@ -1014,6 +1016,8 @@ You can restrict the specific type of files through `is`, noting that it must be
 - `orphan`: Orphan symbolic link
 - `sock`: Socket
 - `sticky`: File with sticky bit set
+
+<DefaultTheme id="filetype" />
 
 ## [icon] {#icon}
 
