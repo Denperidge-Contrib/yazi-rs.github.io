@@ -326,8 +326,6 @@ Outer separator symbol, e.g. `{ open = "", close = "" }`.
 
 ## [mode] {#mode}
 
-<DefaultTheme id="mgr" />
-
 ### `normal_main` {#mode.normal_main}
 
 Normal mode main style.
@@ -336,7 +334,7 @@ Normal mode main style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="mode.normal_main" />
 
 ### `normal_alt` {#mode.normal_alt}
 
@@ -346,7 +344,7 @@ Normal mode alternative style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="mode.normal_alt" />
 
 ### `select_main` {#mode.select_main}
 
@@ -356,7 +354,7 @@ Select mode main style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="mode.select_main" />
 
 ### `select_alt` {#mode.select_alt}
 
@@ -366,7 +364,7 @@ Select mode alternative style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="mode.select_alt" />
 
 ### `unset_main` {#mode.unset_main}
 
@@ -376,7 +374,7 @@ Unset mode main style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="mode.unset_main" />
 
 ### `unset_alt` {#mode.unset_alt}
 
@@ -386,14 +384,14 @@ Unset mode alternative style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
+<DefaultTheme id="mode.unset_alt" />
+
 ## [status] {#status}
 
 <details>
 	<summary>Explanation of `sep_left` and `sep_right`</summary>
 	<img src="/webp/status-sep-explain.webp" loading="lazy" />
 </details>
-
-<DefaultTheme id="mgr" />
 
 ### `overall` {#status.overall}
 
@@ -403,7 +401,7 @@ Overall status bar style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="status.overall" />
 
 ### `sep_left` {#status.sep_left}
 
@@ -413,7 +411,7 @@ Left separator symbol, e.g. `{ open = "", close = "]" }`.
 | ---- | --------------------------------- |
 | Type | `{ open: string, close: string }` |
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="status.sep_left" />
 
 ### `sep_right` {#status.sep_right}
 
@@ -423,7 +421,7 @@ Right separator symbol, e.g. `{ open = "[", close = "" }`.
 | ---- | --------------------------------- |
 | Type | `{ open: string, close: string }` |
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="status.sep_right" />
 
 ### `perm_type` {#status.perm_type}
 
@@ -433,7 +431,7 @@ Style of the file type symbol, such as `d` for directory, `-` for file, `l` for 
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="status.perm_type" />
 
 ### `perm_read` {#status.perm_read}
 
@@ -443,7 +441,7 @@ Style of the read permission symbol (`r`).
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="status.perm_read" />
 
 ### `perm_write` {#status.perm_write}
 
@@ -453,7 +451,7 @@ Style of the write permission symbol (`w`).
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="status.perm_write" />
 
 ### `perm_exec` {#status.perm_exec}
 
@@ -463,7 +461,7 @@ Style of the execute permission symbol (`x`).
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="status.perm_exec" />
 
 ### `perm_sep` {#status.perm_sep}
 
@@ -473,7 +471,7 @@ Style of the permission separator symbol (`-`).
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="status.perm_sep" />
 
 ### `progress_label` {#status.progress_label}
 
@@ -483,7 +481,7 @@ Progress label style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="status.progress_label" />
 
 ### `progress_normal` {#status.progress_normal}
 
@@ -493,7 +491,7 @@ Style of the progress bar when it is not in an error state.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="status.progress_normal" />
 
 ### `progress_error` {#status.progress_error}
 
@@ -503,9 +501,9 @@ Style of the progress bar when an error occurs.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
-## [which] {#which}
+<DefaultTheme id="status.progress_error" />
 
-<DefaultTheme id="mgr" />
+## [which] {#which}
 
 ### `cols` {#which.cols}
 
@@ -515,7 +513,7 @@ Number of columns.
 | ---- | ----------------- |
 | Type | `1` \| `2` \| `3` |
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="which.cols" />
 
 ### `mask` {#which.mask}
 
@@ -525,7 +523,7 @@ Mask style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="which.mask" />
 
 ### `cand` {#which.cand}
 
@@ -535,7 +533,7 @@ Candidate key style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="which.cand" />
 
 ### `rest` {#which.rest}
 
@@ -545,7 +543,7 @@ Rest key style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="which.rest" />
 
 ### `desc` {#which.desc}
 
@@ -555,7 +553,7 @@ Description style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="which.desc" />
 
 ### `separator` {#which.separator}
 
@@ -565,7 +563,7 @@ Separator symbol, e.g. `" -> "`.
 | ---- | -------- |
 | Type | `string` |
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="which.separator" />
 
 ### `separator_style` {#which.separator_style}
 
@@ -575,9 +573,9 @@ Separator style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
-## [confirm] {#confirm}
+<DefaultTheme id="which.separator_style" />
 
-<DefaultTheme id="mgr" />
+## [confirm] {#confirm}
 
 ### `border` {#confirm.border}
 
@@ -587,7 +585,7 @@ Border style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="confirm.border" />
 
 ### `title` {#confirm.title}
 
@@ -597,7 +595,7 @@ Title style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="confirm.title" />
 
 ### `body` {#confirm.body}
 
@@ -607,7 +605,7 @@ Body style.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="confirm.body" />
 
 ### `list` {#confirm.list}
 
@@ -617,7 +615,7 @@ List style, which is the style of the list of items below the content.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="confirm.list" />
 
 ### `btn_yes` {#confirm.btn_yes}
 
@@ -627,7 +625,7 @@ The style of the yes button.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="confirm.btn_yes" />
 
 ### `btn_no` {#confirm.btn_no}
 
@@ -637,7 +635,7 @@ The style of the no button.
 | ---- | ----------------------- |
 | Type | [`Style`](#types.style) |
 
-<DefaultTheme id="mgr" />
+<DefaultTheme id="confirm.btn_no" />
 
 ### `btn_labels` {#confirm.btn_labels}
 
@@ -648,6 +646,8 @@ The first string is the label for the yes button and the second is the label for
 |      |                    |
 | ---- | ------------------ |
 | Type | `[string, string]` |
+
+<DefaultTheme id="confirm.btn_labels" />
 
 ## [spot] {#spot}
 
