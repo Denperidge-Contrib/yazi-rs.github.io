@@ -236,8 +236,8 @@ This is useful for solving [a bug of Überzug++ image size calculation](https://
 
 If your monitor has a `2.0` scale factor, and is running on Wayland under Hyprland, you may need to set `ueberzug_scale: 0.5`, and adjust the value of `ueberzug_offset` according to your case, to offset this issue.
 
-<Default id="preview.ueberzug_scale" show_key={true}/>
-<Default id="preview.ueberzug_offset" show_key={true}/>
+<Default id="preview.ueberzug_scale" show_key="ueberzug_scale"/>
+<Default id="preview.ueberzug_offset" show_key="ueberzug_offset"/>
 
 ## [opener] {#opener}
 

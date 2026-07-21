@@ -111,7 +111,7 @@ export default function Default({
         const [section, key] = id.split(".", 2);  // Get section & key
 
         // Optionally add "for {key}" to output
-        const p = `Default value ${show_key ? `for ${key}` : ""} is`
+        const p = `Default value ${show_key ? `for ${show_key}` : ""} is`
 
         if (!raw) {
                 return (
