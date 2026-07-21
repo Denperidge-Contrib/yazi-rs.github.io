@@ -74,19 +74,26 @@ export function Defaults({section, searchKey}: {section: string, searchKey: stri
         )
 }
 
-export function DefaultWithProp({id, prop, value}) {
+export function DefaultWithProp({id, prop, value, regex}: {id: string, prop:string, value: string, regex?:string}) {
         const [section, key] = id.split(".", 2);  // Get section & key
+        const parsedRegex = new RegExp(regex || `.*${value}.*`)
+
         const data = parse(getRelevantSettingsFile())[section][key]
-                .filter(obj => obj[prop].includes(value))
+                .filter(obj => parsedRegex.test(obj[prop]))
                 .map(obj => (
                         <li>
                                 On <code>{obj.on}</code> pressed,
-                                run <code>{obj.run}</code>
+                                run <code>{JSON.stringify(obj.run)}</code>
                                 <br/>({obj.desc})
                         </li>
                 ))
+        if (data.length >= 1) {
+                return ( <ul>{data}</ul> );
+        } else {
+                const dataFor = `${id} = [ { ${prop} = "${value}" } ]`
+                return ( <p>No default is configured with <code>{dataFor}</code></p> )
+        }
 
-        return ( <ul>{data}</ul> );
 }
 
 export default function Setting({id, show_key, raw=false, asList=false, ...props}: {children: any, id: string, raw:boolean, asList?: boolean, show_key?:boolean}) {
