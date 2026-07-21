@@ -170,6 +170,8 @@ Exit the process.
 | `--code=[n]`    | Exit code.                                                                     |
 | `--no-cwd-file` | Don't output the current directory to the file specified by `yazi --cwd-file`. |
 
+<DefaultWithProp id="mgr.keymap" prop="run" value="quit"/>
+
 ### `close` {#mgr.close}
 
 Close the current tab; if it's the last tab, exit the process instead.
@@ -179,31 +181,45 @@ Close the current tab; if it's the last tab, exit the process instead.
 | `--code=[n]`    | Exit code used when exiting.                                                           |
 | `--no-cwd-file` | Don't output the current directory to the file specified by `yazi --cwd-file` on exit. |
 
+<DefaultWithProp id="mgr.keymap" prop="run" value="close"/>
+
 ### `suspend` {#mgr.suspend}
 
 Pauses Yazi and returns to the parent shell to continue with other tasks.
 
 Once those tasks are done, use the `fg` command of the shell to send a resume signal and return back to Yazi.
 
+<DefaultWithProp id="mgr.keymap" prop="run" value="suspend"/>
+
 ### `arrow` {#mgr.arrow}
 
 <KeymapArrow />
+
+<DefaultWithProp id="mgr.keymap" prop="run" value="arrow"/>
 
 ### `leave` {#mgr.leave}
 
 Go back to the parent directory of the hovered file, or the parent of the current working directory if no file is hovered on.
 
+<DefaultWithProp id="mgr.keymap" prop="run" value="leave"/>
+
 ### `enter` {#mgr.enter}
 
 Enter the child directory.
+
+<DefaultWithProp id="mgr.keymap" prop="run" value="enter"/>
 
 ### `back` {#mgr.back}
 
 Go back to the previous directory.
 
+<DefaultWithProp id="mgr.keymap" prop="run" value="back"/>
+
 ### `forward` {#mgr.forward}
 
 Go forward to the next directory.
+
+<DefaultWithProp id="mgr.keymap" prop="run" value="forward"/>
 
 ### `seek` {#mgr.seek}
 
@@ -213,9 +229,13 @@ Scroll the contents in the preview panel.
 | --------------- | ---------------------------------------------------------------- |
 | `[n]`           | Use negative values to seek up and positive values to seek down. |
 
+<DefaultWithProp id="mgr.keymap" prop="run" value="seek"/>
+
 ### `spot` {#mgr.spot}
 
 Display file information with the preset or user-customized spotter.
+
+<DefaultWithProp id="mgr.keymap" prop="run" value="spot"/>
 
 ### `cd` {#mgr.cd}
 
@@ -256,9 +276,13 @@ desc = 'Cd to E:\Pictures'
 
 Check out the [resources page](/docs/resources) for a more comprehensive bookmark plugin.
 
+<DefaultWithProp id="mgr.keymap" prop="run" value="cd"/>
+
 ### `follow` {#mgr.follow}
 
 Follow the hovered file if it's a symbolic link.
+
+<DefaultWithProp id="mgr.keymap" prop="run" value="follow"/>
 
 ### `reveal` {#mgr.reveal}
 
@@ -270,6 +294,8 @@ If the file is not in the current directory, it will change the current director
 | --------------- | ------------------ |
 | `[url]`         | The URL to reveal. |
 
+<DefaultWithProp id="mgr.keymap" prop="run" value="reveal"/>
+
 ### `toggle` {#mgr.toggle}
 
 Toggle the selection state of the hovered file.
@@ -279,6 +305,8 @@ Toggle the selection state of the hovered file.
 | N/A             | Reverse the selection. |
 | `--state=on`    | Select the file.       |
 | `--state=off`   | Deselect the file.     |
+
+<DefaultWithProp id="mgr.keymap" prop="run" regex="^toggle[^_]"/>
 
 ### `toggle_all` {#mgr.toggle_all}
 
@@ -292,6 +320,8 @@ Toggle the selection state of all files in the current working directory.
 
 Note that `toggle_all --state=off` only deselect the files in CWD, if you have selected files across multiple directories, and want to deselect all of them, use [`escape --select`](#mgr.escape).
 
+<DefaultWithProp id="mgr.keymap" prop="run" value="toggle_all"/>
+
 ### `visual_mode` {#mgr.visual_mode}
 
 Enter visual mode.
@@ -300,6 +330,8 @@ Enter visual mode.
 | --------------- | --------------- |
 | N/A             | Selection mode. |
 | `--unset`       | Unset mode.     |
+
+<DefaultWithProp id="mgr.keymap" prop="run" value="visual_mode"/>
 
 ### `open` {#mgr.open}
 
@@ -310,6 +342,8 @@ Open the selected files using [the rules in `[open]`](/docs/configuration/yazi#o
 | `--interactive` | Open the hovered/selected file(s) with an interactive UI to choose the opening method. |
 | `--hovered`     | Always open the hovered file regardless of the selection state.                        |
 
+<DefaultWithProp id="mgr.keymap" prop="run" value="open"/>
+
 ### `yank` {#mgr.yank}
 
 Yank the selected files.
@@ -319,9 +353,13 @@ Yank the selected files.
 | N/A             | Copy mode.  |
 | `--cut`         | Cut mode.   |
 
+<DefaultWithProp id="mgr.keymap" prop="run" regex="^yank"/>
+
 ### `unyank` {#mgr.unyank}
 
 Cancel the yank status of files.
+
+<DefaultWithProp id="mgr.keymap" prop="run" value="^unyank"/>
 
 ### `paste` {#mgr.paste}
 
@@ -332,6 +370,8 @@ Paste the yanked files.
 | `--force`       | Overwrite the destination file if it exists.                                                                 |
 | `--follow`      | Copy the file pointed to by the symbolic link, rather than the link itself. Only can be used during copying. |
 
+<DefaultWithProp id="mgr.keymap" prop="run" value="paste"/>
+
 ### `link` {#mgr.link}
 
 Create a symbolic link to the yanked files. (This is a privileged action on Windows and must be run as an administrator.)
@@ -341,6 +381,8 @@ Create a symbolic link to the yanked files. (This is a privileged action on Wind
 | `--relative`    | Use a relative path for the symbolic link.   |
 | `--force`       | Overwrite the destination file if it exists. |
 
+<DefaultWithProp id="mgr.keymap" prop="run" regex="^link"/>
+
 ### `hardlink` {#mgr.hardlink}
 
 Hardlink the yanked files.
@@ -349,6 +391,8 @@ Hardlink the yanked files.
 | --------------- | ------------------------------------------------------------------------ |
 | `--force`       | Overwrite the destination file if it exists.                             |
 | `--follow`      | Hardlink the file pointed to by a symbolic link, not the symlink itself. |
+
+<DefaultWithProp id="mgr.keymap" prop="run" value="hardlink"/>
 
 ### `remove` {#mgr.remove}
 
@@ -362,6 +406,8 @@ In the Android platform, you can only use it with the `--permanently` option, si
 | `--permanently` | Permanently delete the files.                                        |
 | `--hovered`     | Always remove the hovered file regardless of the selection state.    |
 
+<DefaultWithProp id="mgr.keymap" prop="run" value="remove"/>
+
 ### `create` {#mgr.create}
 
 Create a file or directory. Ends with `/` (Unix) or `\` (Windows) for directories.
@@ -370,6 +416,8 @@ Create a file or directory. Ends with `/` (Unix) or `\` (Windows) for directorie
 | --------------- | ---------------------------------------------------------------------------------------------- |
 | `--dir`         | Always create directories, regardless of whether end with `/` or `\`.                          |
 | `--force`       | Overwrite the destination file directly if it exists, without showing the confirmation dialog. |
+
+<DefaultWithProp id="mgr.keymap" prop="run" regex="^create"/>
 
 ### `rename` {#mgr.rename}
 
@@ -390,6 +438,8 @@ Rename a file or directory, or bulk rename if multiple files are selected (`$EDI
 You can also use `--cursor` with `--empty`, for example, `rename --empty=stem --cursor=start` will empty the file's stem, and move the cursor to the start.
 
 Which causes the input box content for the filename `foo.jpg` to be `|.jpg`, where "|" represents the cursor position.
+
+<DefaultWithProp id="mgr.keymap" prop="run" regex="^rename"/>
 
 ### `copy` {#mgr.copy}
 
@@ -416,6 +466,8 @@ Copy the URL of files or directories that are selected or hovered on.
 | -------- | ------------------------------------------------------------------- |
 | N/A      | Platform-specific separator, e.g. `\` for Windows and `/` for Unix. |
 | `"unix"` | Use `/` for all platforms.                                          |
+
+<DefaultWithProp id="mgr.keymap" prop="run" value="copy"/>
 
 ### `shell` {#mgr.shell}
 
@@ -458,6 +510,8 @@ desc = "Trash selected files"
 
 For complex shell scripts, you can use TOML's basic strings (`'''` or `"""`) to write them in multiple lines, as demonstrated in [this tip](/docs/tips#email-selected-files).
 
+<DefaultWithProp id="mgr.keymap" prop="run" value="shell"/>
+
 ### `hidden` {#mgr.hidden}
 
 Set the visibility of hidden files.
@@ -467,6 +521,8 @@ Set the visibility of hidden files.
 | `"show"`        | Show hidden files.       |
 | `"hide"`        | Hide hidden files.       |
 | `"toggle"`      | Toggle the hidden state. |
+
+<DefaultWithProp id="mgr.keymap" prop="run" value="hidden"/>
 
 ### `linemode` {#mgr.linemode}
 
@@ -480,6 +536,8 @@ Set the [line mode](/docs/configuration/yazi#mgr.linemode).
 | `"mtime"`       | Display the last modified time of the file.                                                                                                                                                         |
 | `"permissions"` | Display the permissions of the file, only available on Unix-like systems.                                                                                                                           |
 | `"owner"`       | Display the owner of the file, only available on Unix-like systems.                                                                                                                                 |
+
+<DefaultWithProp id="mgr.keymap" prop="run" value="linemode"/>
 
 ### `search` {#mgr.search}
 
@@ -509,6 +567,8 @@ desc = "Switch to the flat view with a max depth of 3"
 [rg]: https://github.com/BurntSushi/ripgrep
 [rga]: https://github.com/phiresky/ripgrep-all
 
+<DefaultWithProp id="mgr.keymap" prop="run" regex="^search"/>
+
 ### `find` {#mgr.find}
 
 Find files in the current working directory interactively and incrementally.
@@ -519,6 +579,8 @@ Find files in the current working directory interactively and incrementally.
 | `--smart`       | Use smart-case when finding, i.e. case-sensitive if the query contains uppercase characters, otherwise case-insensitive. |
 | `--insensitive` | Use case-insensitive find.                                                                                               |
 
+<DefaultWithProp id="mgr.keymap" prop="run" regex="find[^_]"/>
+
 ### `find_arrow` {#mgr.find_arrow}
 
 Move the cursor to the next or previous occurrence.
@@ -527,12 +589,16 @@ Move the cursor to the next or previous occurrence.
 | --------------- | -------------------------------- |
 | `--previous`    | Move to the previous occurrence. |
 
+<DefaultWithProp id="mgr.keymap" prop="run" value="find_arrow"/>
+
 ### `filter` {#mgr.filter}
 
 | Argument/Option | Description                                                                                                           |
 | --------------- | --------------------------------------------------------------------------------------------------------------------- |
 | `--smart`       | Filter with smart-case, i.e. case-sensitive if the keyword contains uppercase characters, otherwise case-insensitive. |
 | `--insensitive` | Use case-insensitive filter.                                                                                          |
+
+<DefaultWithProp id="mgr.keymap" prop="run" value="filter"/>
 
 ### `sort` {#mgr.sort}
 
@@ -549,6 +615,8 @@ Move the cursor to the next or previous occurrence.
 - `--dir-first`: Display directories first. `--dir-first` or `--dir-first=yes` to enable, `--dir-first=no` to disable.
 - `--translit`: Transliterate filenames for sorting, see [sort_translit](/docs/configuration/yazi#mgr.sort_translit) for details. `--translit` or `--translit=yes` to enable, `--translit=no` to disable.
 
+<DefaultWithProp id="mgr.keymap" prop="run" value="sort"/>
+
 ### `tab_create` {#mgr.tab_create}
 
 | Argument/Option | Description                                         |
@@ -558,6 +626,8 @@ Move the cursor to the next or previous occurrence.
 
 If neither `[url]` nor `--current` is specified, will use the startup directory to create the tab.
 
+<DefaultWithProp id="mgr.keymap" prop="run" value="tab_create"/>
+
 ### `tab_close` {#mgr.tab_close}
 
 | Argument/Option | Description                                     |
@@ -566,6 +636,8 @@ If neither `[url]` nor `--current` is specified, will use the startup directory 
 
 If you want to close the current tab, use the [`close`](/docs/configuration/keymap/#mgr.close) action instead.
 
+<DefaultWithProp id="mgr.keymap" prop="run" value="tab_close"/>
+
 ### `tab_switch` {#mgr.tab_switch}
 
 | Argument/Option | Description                                                                                                              |
@@ -573,19 +645,27 @@ If you want to close the current tab, use the [`close`](/docs/configuration/keym
 | `[n]`           | Switch to the tab at position `n`, starting from 0.                                                                      |
 | `--relative`    | Switch to the tab at a position relative to the current tab. The value of `n` can be negative when using this parameter. |
 
+<DefaultWithProp id="mgr.keymap" prop="run" value="tab_switch"/>
+
 ### `tab_swap` {#mgr.tab_swap}
 
 | Argument/Option | Description                                                                                                                          |
 | --------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
 | `[n]`           | Swap the current tab with the tab at position `n`, where negative values move the tab forward, and positive values move it backward. |
 
+<DefaultWithProp id="mgr.keymap" prop="run" value="tab_swap"/>
+
 ### `help` {#mgr.help}
 
 Open the help menu.
 
+<DefaultWithProp id="mgr.keymap" prop="run" value="help"/>
+
 ### `plugin` {#mgr.plugin}
 
 See [Functional plugin](/docs/plugins/overview#functional-plugin).
+
+<DefaultWithProp id="mgr.keymap" prop="run" value="plugin"/>
 
 ### `noop` {#mgr.noop}
 
@@ -609,19 +689,27 @@ run = [ "noop" ]  # The array can only have one element and must be "noop"
 
 The disabled keys won't trigger any actions when pressed and won't show up in the `which` component.
 
+<DefaultWithProp id="mgr.keymap" prop="run" value="noop"/>
+
 ## [tasks] {#tasks}
 
 ### `show` {#tasks.show}
 
 Show the task manager.
 
+<DefaultWithProp id="mgr.keymap" prop="run" value="tasks:show"/>
+
 ### `close` {#tasks.close}
 
 Hide the task manager.
 
+<DefaultWithProp id="tasks.keymap" prop="run" value="close"/>
+
 ### `arrow` {#tasks.arrow}
 
 <KeymapArrow />
+
+<DefaultWithProp id="tasks.keymap" prop="run" value="arrow"/>
 
 ### `inspect` {#tasks.inspect}
 
@@ -633,37 +721,54 @@ Inspect the task log:
 
 press `q` to exit the inspect view.
 
+<DefaultWithProp id="tasks.keymap" prop="run" value="inspect"/>
+
 ### `cancel` {#tasks.cancel}
 
 Cancel the task.
+
+<DefaultWithProp id="tasks.keymap" prop="run" value="cancel"/>
 
 ### `help` {#tasks.help}
 
 Open the help menu.
 
+<DefaultWithProp id="tasks.keymap" prop="run" value="help"/>
+
 ### `plugin` {#tasks.plugin}
 
 See [Functional plugin](/docs/plugins/overview#functional-plugin).
+
+<DefaultWithProp id="tasks.keymap" prop="run" value="plugin"/>
 
 ### `noop` {#tasks.noop}
 
 See [`noop` action](#mgr.noop).
 
+<DefaultWithProp id="tasks.keymap" prop="run" value="noop"/>
+
 ## [spot] {#spot}
+
 
 ### `close` {#spot.close}
 
 Hide the spotter.
 
+<DefaultWithProp id="spot.keymap" prop="run" value="close"/>
+
 ### `arrow` {#spot.arrow}
 
 <KeymapArrow />
+
+<DefaultWithProp id="spot.keymap" prop="run" value="arrow"/>
 
 ### `swipe` {#spot.swipe}
 
 | Argument/Option | Description                                                                                  |
 | --------------- | -------------------------------------------------------------------------------------------- |
 | `[n]`           | Swipe `n` files up or down in the file list. Negative value for up, positive value for down. |
+
+<DefaultWithProp id="spot.keymap" prop="run" value="swipe"/>
 
 ### `copy` {#spot.copy}
 
@@ -673,17 +778,25 @@ Copy the content from the spotter.
 | --------------- | ---------------------------- |
 | `"cell"`        | Copy the selected table cell |
 
+<DefaultWithProp id="spot.keymap" prop="run" value="copy"/>
+
 ### `plugin` {#spot.plugin}
 
 See [Functional plugin](/docs/plugins/overview#functional-plugin).
+
+<DefaultWithProp id="spot.keymap" prop="run" value="plugin"/>
 
 ### `noop` {#spot.noop}
 
 See [`noop` action](#mgr.noop).
 
+<DefaultWithProp id="spot.keymap" prop="run" value="noop"/>
+
 ### `help` {#spot.help}
 
 Open the help menu.
+
+<DefaultWithProp id="spot.keymap" prop="run" value="help"/>
 
 ## [pick] {#pick}
 
@@ -695,21 +808,31 @@ Cancel the picker.
 | --------------- | ------------------ |
 | `--submit`      | Submit the picker. |
 
+<DefaultWithProp id="pick.keymap" prop="run" value="close"/>
+
 ### `arrow` {#pick.arrow}
 
 <KeymapArrow />
+
+<DefaultWithProp id="pick.keymap" prop="run" value="arrow"/>
 
 ### `help` {#pick.help}
 
 Open the help menu.
 
+<DefaultWithProp id="pick.keymap" prop="run" value="help"/>
+
 ### `plugin` {#pick.plugin}
 
 See [Functional plugin](/docs/plugins/overview#functional-plugin).
 
+<DefaultWithProp id="pick.keymap" prop="run" value="plugin"/>
+
 ### `noop` {#pick.noop}
 
 See [`noop` action](#mgr.noop).
+
+<DefaultWithProp id="pick.keymap" prop="run" value="noop"/>
 
 ## [input] {#input}
 
@@ -721,9 +844,13 @@ Cancel input.
 | --------------- | ----------------- |
 | `--submit`      | Submit the input. |
 
+<DefaultWithProp id="input.keymap" prop="run" value="close"/>
+
 ### `escape` {#input.escape}
 
 Go back the normal mode, or cancel input.
+
+<DefaultWithProp id="input.keymap" prop="run" value="escape"/>
 
 ### `move` {#input.move}
 
@@ -734,9 +861,13 @@ Move the cursor left or right.
 | `[n]`            | Move the cursor `n` characters left or right. Negative value for left, positive value for right. |
 | `--in-operating` | Move the cursor only if it's currently waiting for an operation.                                 |
 
+<DefaultWithProp id="input.keymap" prop="run" value=""/>
+
 ### `backward` {#input.backward}
 
 Move back to the start of the current or previous word.
+
+<DefaultWithProp id="input.keymap" prop="run" value=""/>
 
 ### `forward` {#input.forward}
 
@@ -746,6 +877,8 @@ Move forward to the start of the next word.
 | --------------- | ---------------------------------------------------- |
 | `--end-of-word` | Move forward to the end of the current or next word. |
 
+<DefaultWithProp id="input.keymap" prop="run" value=""/>
+
 ### `insert` {#input.insert}
 
 Enter insert mode. This action is only available in normal mode.
@@ -754,9 +887,13 @@ Enter insert mode. This action is only available in normal mode.
 | --------------- | ------------------------ |
 | `--append`      | Insert after the cursor. |
 
+<DefaultWithProp id="input.keymap" prop="run" value=""/>
+
 ### `visual` {#input.visual}
 
 Enter visual mode. This action is only available in normal mode.
+
+<DefaultWithProp id="input.keymap" prop="run" value=""/>
 
 ### `delete` {#input.delete}
 
@@ -767,9 +904,13 @@ Delete the selected characters. This action is only available in normal mode.
 | `--cut`         | Cut the selected characters into clipboard, instead of only deleting them. |
 | `--insert`      | Delete and enter insert mode.                                              |
 
+<DefaultWithProp id="input.keymap" prop="run" value=""/>
+
 ### `yank` {#input.yank}
 
 Copy the selected characters. This action is only available in normal mode.
+
+<DefaultWithProp id="input.keymap" prop="run" value=""/>
 
 ### `paste` {#input.paste}
 
@@ -779,17 +920,25 @@ Paste the copied characters after the cursor. This action is only available in n
 | --------------- | ---------------------------------------------- |
 | `--before`      | Paste the copied characters before the cursor. |
 
+<DefaultWithProp id="input.keymap" prop="run" value=""/>
+
 ### `undo` {#input.undo}
 
 Undo the last operation. This action is only available in normal mode.
+
+<DefaultWithProp id="input.keymap" prop="run" value=""/>
 
 ### `redo` {#input.redo}
 
 Redo the last operation. This action is only available in normal mode.
 
+<DefaultWithProp id="input.keymap" prop="run" value=""/>
+
 ### `help` {#input.help}
 
 Open the help menu. This action is only available in normal mode.
+
+<DefaultWithProp id="input.keymap" prop="run" value=""/>
 
 ### `backspace` {#input.backspace}
 
@@ -798,6 +947,8 @@ Delete the character before the cursor. This action is only available in insert 
 | Argument/Option | Description                            |
 | --------------- | -------------------------------------- |
 | `--under`       | Delete the character under the cursor. |
+
+<DefaultWithProp id="input.keymap" prop="run" value=""/>
 
 ### `kill` {#input.kill}
 
@@ -810,15 +961,21 @@ Kill the specified range of characters. This action is only available in insert 
 | `"backward"`    | Kill backwards to the start of the current word. |
 | `"forward"`     | Kill forwards to the end of the current word.    |
 
+<DefaultWithProp id="input.keymap" prop="run" value=""/>
+
 ### `plugin` {#input.plugin}
 
 See [Functional plugin](/docs/plugins/overview#functional-plugin). This action is only available in normal mode.
+
+<DefaultWithProp id="input.keymap" prop="run" value=""/>
 
 ### `noop` {#input.noop}
 
 See [`noop` action](#mgr.noop).
 
 ## [confirm] {#confirm}
+
+<DefaultWithProp id="mgr.keymap" prop="run" value=""/>
 
 ### `close` {#confirm.close}
 
@@ -828,15 +985,21 @@ Cancel and close the confirmation dialog.
 | --------------- | ------------------------ |
 | `--submit`      | Submit the confirmation. |
 
+<DefaultWithProp id="mgr.keymap" prop="run" value=""/>
+
 ### `arrow` {#confirm.arrow}
 
 <KeymapArrow />
+
+<DefaultWithProp id="mgr.keymap" prop="run" value=""/>
 
 ### `help` {#confirm.help}
 
 Open the help menu.
 
 ## [cmp] {#cmp}
+
+<DefaultWithProp id="mgr.keymap" prop="run" value=""/>
 
 ### `close` {#cmp.close}
 
@@ -846,17 +1009,25 @@ Hide the completion menu.
 | --------------- | ---------------------- |
 | `--submit`      | Submit the completion. |
 
+<DefaultWithProp id="mgr.keymap" prop="run" value=""/>
+
 ### `arrow` {#cmp.arrow}
 
 <KeymapArrow />
+
+<DefaultWithProp id="mgr.keymap" prop="run" value=""/>
 
 ### `help` {#cmp.help}
 
 Open the help menu.
 
+<DefaultWithProp id="mgr.keymap" prop="run" value=""/>
+
 ### `plugin` {#cmp.plugin}
 
 See [Functional plugin](/docs/plugins/overview#functional-plugin).
+
+<DefaultWithProp id="mgr.keymap" prop="run" value=""/>
 
 ### `noop` {#cmp.noop}
 
@@ -864,25 +1035,37 @@ See [`noop` action](#mgr.noop).
 
 ## [help] {#help}
 
+<DefaultWithProp id="mgr.keymap" prop="run" value=""/>
+
 ### `close` {#help.close}
 
 Hide the help menu.
+
+<DefaultWithProp id="mgr.keymap" prop="run" value=""/>
 
 ### `escape` {#help.escape}
 
 Clear the filter, or hide the help menu.
 
+<DefaultWithProp id="mgr.keymap" prop="run" value=""/>
+
 ### `arrow` {#help.arrow}
 
 <KeymapArrow />
+
+<DefaultWithProp id="mgr.keymap" prop="run" value=""/>
 
 ### `filter` {#help.filter}
 
 Apply a filter for the help items.
 
+<DefaultWithProp id="mgr.keymap" prop="run" value=""/>
+
 ### `plugin` {#help.plugin}
 
 See [Functional plugin](/docs/plugins/overview#functional-plugin).
+
+<DefaultWithProp id="mgr.keymap" prop="run" value=""/>
 
 ### `noop` {#help.noop}
 
