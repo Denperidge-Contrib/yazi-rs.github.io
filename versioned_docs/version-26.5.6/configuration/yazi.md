@@ -325,6 +325,8 @@ With that:
 - You can [`spot`](/docs/configuration/keymap#mgr.spot) on a file to check it's mime-type with the default <kbd>Tab</kbd> key.
 - If `use` is an array containing multiple openers, all commands in these openers will be merged. [`open`](/docs/configuration/keymap#mgr.open) will run the first of these commands; [`open --interactive`](/docs/configuration/keymap#mgr.open) will list all of these commands in the "open with" menu.
 
+<Default id="open" raw={true} />
+
 ## [tasks] {#tasks}
 
 ### `file_workers` {#tasks.file_workers}
@@ -398,7 +400,7 @@ Here are the available options for a single rule:
 - `prio`: Task scheduling priority. One of `high`, `normal` or `low`.
 - `group`: Group of the fetcher. Only the first matching fetcher in the same group will be run.
 
-<Default id="plugin.fetchers"/>
+<Default id="plugin.fetchers" raw={true}/>
 
 ### previewers {#plugin.previewers}
 
@@ -439,7 +441,7 @@ Yazi comes with these previewer plugins:
 
 If you want to create your own previewer, see [Previewer API](/docs/plugins/overview#previewer).
 
-<Default id="plugin.previewers"/>
+<Default id="plugin.previewers" raw={true} />
 
 ### preloaders {#plugin.preloaders}
 
@@ -468,6 +470,8 @@ Yazi comes with these preloader plugins:
 - pdf: preloads and caches PDFs.
 
 If you want to create your own preloader, see [Preloader API](/docs/plugins/overview#preloader).
+
+<Default id="plugin.preloaders" raw={true}/>
 
 ## [input] {#input}
 
