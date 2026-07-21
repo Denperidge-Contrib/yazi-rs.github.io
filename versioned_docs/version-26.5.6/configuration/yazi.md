@@ -499,7 +499,7 @@ See [`Origin`](/docs/plugins/aliases#origin) for available values.
 
 As for the offset, it's a 4-element tuple: `(x, y, width, height)`.
 
-<Default id="input.offset"/>
+<Defaults section="input" searchKey="offset" />
 
 ### Placeholder {#input.placeholder}
 
@@ -507,39 +507,50 @@ Some inputs have special placeholders that will be replaced with actual content 
 
 - cd_title: String
 
-  Title of the [`cd --interactive`](/docs/configuration/keymap/#mgr.cd) input used to enter the target path.
+  - Title of the [`cd --interactive`](/docs/configuration/keymap/#mgr.cd) input used to enter the target path.
+  - <Default id="input.cd_title"/>
 
 - create_title: [String, String]
 
-  It's a tuple of 2-element: first for [`create`](/docs/configuration/keymap/#mgr.create) input title, second for `create --dir` action.
+  - It's a tuple of 2-element: first for [`create`](/docs/configuration/keymap/#mgr.create) input title, second for `create --dir` action.
+  - <Default id="input.create_title"/>
+
 
 - rename_title: String
 
-  Title of the [`rename`](/docs/configuration/keymap/#mgr.rename) input used to enter the new name.
+  - Title of the [`rename`](/docs/configuration/keymap/#mgr.rename) input used to enter the new name.
+  - <Default id="input.rename_title"/>
 
 - filter_title: String
 
-  Title of the [`filter`](/docs/configuration/keymap/#mgr.filter) input used to enter the keyword.
+  - Title of the [`filter`](/docs/configuration/keymap/#mgr.filter) input used to enter the keyword.
+  - <Default id="input.filter_title"/>
+
 
 - find_title: [String, String]
 
-  It's a tuple of 2-element: first for [`find`](/docs/configuration/keymap/#mgr.find), second for `find --previous`.
+  - It's a tuple of 2-element: first for [`find`](/docs/configuration/keymap/#mgr.find), second for `find --previous`. 
+  - <Default id="input.find_title"/>
 
 - search_title: String
 
   - `{n}`: Name of the current [`search`](/docs/configuration/keymap/#mgr.search) engine.
+  - <Default id="input.search_title"/>
 
 - shell_title: [String, String]
 
-  It's a tuple of 2-element: first for [`shell --interactive`](/docs/configuration/keymap/#mgr.shell), second for `shell --interactive --block`.
+  - It's a tuple of 2-element: first for [`shell --interactive`](/docs/configuration/keymap/#mgr.shell), second for `shell --interactive --block`.
+  - <Default id="input.shell_title"/>
 
 ## [confirm] {#confirm}
 
 Same as the [`[input]`](#input) section. There are a few available: `trash`, `delete`, `overwrite` and `quit`.
+<Default id="confirm" raw={true}/>
 
 ## [pick] {#pick}
 
 Same as the [`[input]`](#input) section. Available selectors: `open`.
+<Default id="pick" raw={true}/>
 
 ## [which] {#which}
 
