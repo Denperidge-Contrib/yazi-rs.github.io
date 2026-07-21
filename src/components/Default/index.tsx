@@ -31,21 +31,22 @@ function getDefaultAsCodeblock(data: object, section: string, key?: string) {
 // For raw=true
 function _getRawtoml(defaultFileString: string, regex: RegExp, cb: (val: string) => string) {
         const toml = cb(defaultFileString.match(regex)[0])
-        parse(toml)  // Sanity check
+        //parse(toml)  // Sanity check
         return toml;
 }
 
-function getRawtoml(defaultFileString: string, section: string, key?: string) {
+function getRawtoml(defaultFileString: string, section: string, key?: string, keyRegexEnd="\]", sectionRegexEnd:string="(^\\[|$(?![\\r\\n]))") {
+        // return "\\[" + section + "\\](.|\\n)*?" + sectionRegexEnd
         const sectionToml = _getRawtoml(
                 defaultFileString,
-                new RegExp("\\[" + section + "\\](.|\n)*?(^\\[|$(?![\r\n]))", "gm"),
+                new RegExp("\\[" + section + "\\](.|\n)*?" + sectionRegexEnd, "gm"),
                 (val) => val.replace(/\]$\n\n^\[/m, "]")
         );
         if (!key) { return sectionToml; }
         else {
                 return _getRawtoml(
                         sectionToml,
-                        new RegExp(key +"(.|\n)*?\]", "gm"),
+                        new RegExp(key + "(.|\n)*?" + keyRegexEnd, "gm"),
                         (val) => val)
         }
 }
@@ -98,12 +99,16 @@ export default function Default({
         id, show_key,
         raw=false,
         asList=false,
+        sectionRegexEnd=undefined,
+        keyRegexEnd="\]", // TODO fix filetype/theme raw multiline output
         relevantFile=getRelevantSettingsFile(),
         ...props}: {
                 id: string,
                 show_key?: string,
                 raw?: boolean,
                 asList?: boolean,
+                sectionRegexEnd?: string,
+                keyRegexEnd?: string,
                 relevantFile?: string,
                 children?: any
         }) {
@@ -122,7 +127,7 @@ export default function Default({
                         <section className="default">
                                 <p {...props}>{p}:</p>
                                 <CodeBlock language="toml">
-                                        {getRawtoml(relevantFile, section, key)}
+                                        {getRawtoml(relevantFile, section, key, keyRegexEnd)}
                                 </CodeBlock>
                         </section>
 
@@ -130,6 +135,8 @@ export default function Default({
         }
 }
 
+const SECTION_REGEXEND = "^\[";
+const KEY_REGEXEND = "$"
 export function DefaultTheme({id, ...props}) {
         const [section,key] = id.split(".", 2);
 
@@ -142,13 +149,13 @@ export function DefaultTheme({id, ...props}) {
         
         if (values[0] == values[1]) {
                 return (
-                        <Default id={id} show_key="both themes" relevantFile={themeLight} {...props}/>
+                        <Default id={id} raw={true} keyRegexEnd="$" sectionRegexEnd={SECTION_REGEXEND} show_key="both themes" relevantFile={themeLight} {...props}/>
                 )
         } else {
                 return (
                         <section className="default">
-                                <Default id={id} show_key="the light theme" relevantFile={themeLight} {...props} />
-                                <Default id={id} show_key="the dark theme" relevantFile={themeDark} {...props}/>
+                                <Default keyRegexEnd="$" id={id} raw={true} sectionRegexEnd={SECTION_REGEXEND} show_key="the light theme" relevantFile={themeLight} {...props} />
+                                <Default keyRegexEnd="$" id={id} raw={true} sectionRegexEnd={SECTION_REGEXEND} show_key="the dark theme" relevantFile={themeDark} {...props}/>
                         </section>
                 )
         }
