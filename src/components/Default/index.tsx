@@ -31,7 +31,7 @@ function getDefaultAsCodeblock(data: object, section: string, key?: string) {
 // For raw=true
 function _getRawtoml(defaultFileString: string, regex: RegExp, cb: (val: string) => string) {
         const toml = cb(defaultFileString.match(regex)[0])
-        //parse(toml)  // Sanity check
+        parse(toml)  // Sanity check
         return toml;
 }
 
