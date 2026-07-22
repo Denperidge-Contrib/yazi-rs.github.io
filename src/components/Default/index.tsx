@@ -35,7 +35,7 @@ function _getRawtoml(defaultFileString: string, regex: RegExp, cb: (val: string)
         return toml;
 }
 
-function getRawtoml(defaultFileString: string, section: string, key?: string, keyRegexEnd="\]", sectionRegexEnd:string="(^\\[|$(?![\\r\\n]))") {
+function getRawtoml(defaultFileString: string, section: string, key?: string, sectionRegexEnd:string="(^\\[|$(?![\\r\\n]))", keyRegexEnd="\]") {
         // return "\\[" + section + "\\](.|\\n)*?" + sectionRegexEnd
         const sectionToml = _getRawtoml(
                 defaultFileString,
@@ -127,7 +127,7 @@ export default function Default({
                         <section className="default">
                                 <p {...props}>{p}:</p>
                                 <CodeBlock language="toml">
-                                        {getRawtoml(relevantFile, section, key, keyRegexEnd)}
+                                        {getRawtoml(relevantFile, section, key, sectionRegexEnd, keyRegexEnd)}
                                 </CodeBlock>
                         </section>
 
@@ -135,7 +135,7 @@ export default function Default({
         }
 }
 
-const SECTION_REGEXEND = "^\[";
+const SECTION_REGEXEND = "^\]";
 const KEY_REGEXEND = "$"
 export function DefaultTheme({id, ...props}) {
         const [section,key] = id.split(".", 2);
